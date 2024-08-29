@@ -3,8 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InstitutionController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\DivisionController;
 use Illuminate\Support\Facades\Route;
 
 // RUTAS DE DIRECTORIO
@@ -18,8 +20,11 @@ Route::get('/directory/divisions',[DirectoryController::class,'divisions_dir'])-
 Route::middleware('auth')->group(function () {
 
     Route::resource('contact', ContactController::class);
-    Route::resource('category', CategoryController::class);
     Route::resource('institution', InstitutionController::class);
+    Route::resource('category', CategoryController::class);
+    Route::resource('subcategory', SubcategoryController::class);
+    Route::resource('division', DivisionController::class);
+
 
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

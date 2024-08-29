@@ -36,13 +36,13 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="d-flex gap-1">
+                    <x-nav-link :href="route('subcategory.index')" :active="request()->routeIs('subcategory.index')" class="d-flex gap-1">
                         <i class="fa fa-th" aria-hidden="true"></i>
                         <span>{{ __('Subcategorías') }}</span>
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="d-flex gap-1">
+                    <x-nav-link :href="route('division.index')" :active="request()->routeIs('division.index')" class="d-flex gap-1">
                         <i class="fa fa-th-list" aria-hidden="true"></i>
                         <span>{{ __('Divisiones') }}</span>
                     </x-nav-link>
