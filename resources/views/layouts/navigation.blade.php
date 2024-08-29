@@ -65,7 +65,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('home')" class="d-flex align-items-center gap-2">
+                        <x-dropdown-link :href="route('user.index')" class="d-flex align-items-center gap-2">
                             <i class="fa fa-users" aria-hidden="true"></i><span>{{ __('Usuarios') }}</span>
                         </x-dropdown-link>
                         {{-- <x-dropdown-link :href="route('user.index')" class="d-flex align-items-center gap-2">

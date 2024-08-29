@@ -7,6 +7,7 @@ use App\Http\Controllers\InstitutionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\DivisionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // RUTAS DE DIRECTORIO
@@ -24,6 +25,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('subcategory', SubcategoryController::class);
     Route::resource('division', DivisionController::class);
+    Route::resource('user', UserController::class);
+
 
 
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
