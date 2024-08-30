@@ -3,7 +3,7 @@
     @if(session('success'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('success')}}</strong>
+                <strong>{{ session('success') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,7 +12,7 @@
     @elseif(session('danger'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('danger')}}</strong>
+                <strong>{{ session('danger') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-6 d-flex justify-content-end">
                         <a class="btn rounded uppercase fw-bold w-50 d-flex justify-content-between align-items-center"
-                            style="background-color: #111e60; color: #f2f2f2;" href="{{route('user.create')}}">
+                            style="background-color: #111e60; color: #f2f2f2;" href="{{ route('user.create') }}">
                             <i class="fa fa-bars"></i>
                             Agregar
                             <i class="fa fa-bars"></i>
@@ -47,20 +47,17 @@
                                     <tr>
                                         <th>NOMBRE</th>
                                         <th>CORREO ELECTRÓNICO</th>
-                                        <th>CONTRASEÑA</th>
-                                        <th>CREADO</th>
+                                        <th class="text-center">CREADO</th>
                                         {{-- <th class="text-center">ACCIONES</th> --}}
                                         <th class="text-center">ESTADO</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                        @foreach($users as $user)
+                                    @foreach($users as $user)
                                         <tr>
-                                            <td class="col-3">{{$user->name}}</td>
-                                            <td class="col-3">{{$user->email}}</td>
-                                            <td class="col-3">{{$user->password}}</td>
-                                            <td class="col-3">{{$user->created_at}}</td>
+                                            <td class="col-3">{{ $user->name }}</td>
+                                            <td class="col-3">{{ $user->email }}</td>
+                                            <td class="col-3 text-center">{{ $user->created_at->format('d-m-Y | H:i:s') }}</td>
                                             {{--<td>
                                                 <div class="row">
                                                      <div class="col-4">
@@ -89,8 +86,7 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                        @endforeach
-
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

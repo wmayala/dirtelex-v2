@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="row p-5">
-                    <form action="{{route('user.store')}}" method="post">
+                    <form action="{{ route('user.store') }}" method="post">
                         @csrf
 
                             <div class="flex justify-center align-center">
@@ -74,14 +74,14 @@
                                     </tr>
                                 </table>
                             </div>
-                        
+
                         <br>
                         <div class="text-center">
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Guardar</strong>
                             </button>
 
-                            <a href="{{route('user.index')}}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
+                            <a href="{{ route('user.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>
