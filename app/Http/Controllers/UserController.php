@@ -61,7 +61,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user=User::find($id);
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -69,7 +70,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user=User::find($id);
+        return view('users.update', compact('user'));
     }
 
     /**
@@ -77,7 +79,25 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user=User::find($id);
+
+        $request->validate([
+            'name'=>'required|string|max:255',
+            'email'=>'required|email',
+            'new_password'=>'min:8|nullable',
+            'status'=>'required|boolean',
+        ]);
+
+        $user->update([
+            $user->name=$request->name,
+            $user->email=$request->email,
+            $user->password=$request->new_password==null?$user->password:$request->new_password,
+            $user->status=$request->status,
+        ]);
+
+        return redirect()
+            ->route('user.index')
+            ->with('success','Usuario actualizado correctamente');
     }
 
     /**

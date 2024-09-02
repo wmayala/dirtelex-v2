@@ -19,7 +19,6 @@
             </div>
         </div>
     @endif
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -36,9 +35,7 @@
                         </a>
                     </div>
                 </div>
-
                 @include('layouts.search')
-
                 <div class="container p-3">
                     <div class="row">
                         <div class="col-12">
@@ -48,7 +45,8 @@
                                         <th>NOMBRE</th>
                                         <th>CORREO ELECTRÓNICO</th>
                                         <th class="text-center">CREADO</th>
-                                        {{-- <th class="text-center">ACCIONES</th> --}}
+                                        <th class="text-center">MODIFICADO</th>
+                                        <th class="text-center">ACCIONES</th>
                                         <th class="text-center">ESTADO</th>
                                     </tr>
                                 </thead>
@@ -57,27 +55,18 @@
                                         <tr>
                                             <td class="col-3">{{ $user->name }}</td>
                                             <td class="col-3">{{ $user->email }}</td>
-                                            <td class="col-3 text-center">{{ $user->created_at->format('d-m-Y | H:i:s') }}</td>
-                                            {{--<td>
-                                                <div class="row">
-                                                     <div class="col-4">
-                                                        <a href="{{route('subcategory.show', $user->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <td class="col-2 text-center">{{ $user->created_at->format('d-m-Y') }} || {{ $user->created_at->format('H:i:s') }}</td>
+                                            <td class="col-2 text-center">{{ $user->updated_at->format('d-m-Y') }} || {{ $user->updated_at->format('H:i:s') }}</td>
+                                            <td class="text-center">
+                                                <div class="d-flex gap-3 justify-content-center">
+                                                    <div class="">
+                                                        <a href="{{ route('user.show', $user->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                     </div>
-                                                    <div class="text-center">
-                                                        <a href="{{route('subcategory.edit', $user->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </div>
-                                                    {{-- <div class="col-4">
-
-                                                        <form action="{{ route('subcategory.delete', $user->id) }}" method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" onclick="deleteObject()">
-                                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                                            </button>
-                                                        </form>
+                                                    <div class="">
+                                                        <a href="{{ route('user.edit', $user->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                     </div>
                                                 </div>
-                                            </td>--}}
+                                            </td>
                                             <td class="text-center">
                                                 @if($user->status==1)
                                                     <span class="badge bg-success">ACTIVO</span>
