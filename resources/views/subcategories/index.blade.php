@@ -53,23 +53,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @if($subcategories)
+                                    @if($subcategories)
                                         @foreach($subcategories as $subcategory)
                                         <tr>
-                                            <td class="col-3">{{$subcategory->subcategory}}</td>
-                                            <td class="col-4">{{$subcategory->category->category}}</td>
-                                            <td class="col-3">{{$subcategory->description?$subcategory->description:'No definida'}}</td>
+                                            <td class="col-3">{{ $subcategory->subcategory }}</td>
+                                            <td class="col-4">{{ $subcategory->category->category }}</td>
+                                            <td class="col-3">{{ $subcategory->description?$subcategory->description:'No definida' }}</td>
                                             <td class="text-center">
                                                 <div class="row">
                                                     <div class="col-4">
-                                                        <a href="{{route('subcategory.show', $subcategory->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        <a href="{{ route('subcategory.show', $subcategory->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                     </div>
                                                     <div class="col-4">
-                                                        <a href="{{route('subcategory.edit', $subcategory->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                        <a href="{{ route('subcategory.edit', $subcategory->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                     </div>
                                                     <div class="col-4">
 
-                                                        <form action="{{ route('subcategory.delete', $subcategory->id) }}" method="post">
+                                                        <form action="{{ route('subcategory.destroy', $subcategory->id) }}" method="post">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" onclick="deleteObject()">
@@ -90,7 +90,7 @@
                                         @endforeach
                                     @else
                                         <tr><td colspan="4">No existen subcategorías</td></tr>
-                                    @endif --}}
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

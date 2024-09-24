@@ -2,13 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
+use App\Models\Subcategories;
 use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
 {
     public function index(Request $request)
     {
-        return view('subcategories.index');
+        if($request)
+        {
+            $search=$request->input('search');
+            $subcategories=Subcategories::where('subcategory','like','%'.$search.'%')->get();
+            return view('subcategories.index')->with('subcategories', $subcategories);
+        }
+        else
+        {
+            $subcategories=Subcategories::get();
+            return view('subcategories.index')->with('subcategories', $subcategories);
+        }
     }
 
     /**
@@ -16,7 +28,8 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        return view('subcategories.create');
+        $categories=Categories::all();
+        return view('subcategories.create')->with('categories', $categories);
     }
 
     /**
@@ -24,7 +37,15 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $subcategories=new Subcategories([
+            'subcategory'=>$request->subcategory,
+            'description'=>$request->description,
+            'status'=>$request->status,
+        ]);
+        $subcategories->category()->associate(Categories::find($request->category_id));
+        $subcategories->save();
 
+        return redirect()->route('subcategory.index')->with('success','Subcategoría creada correctamente');
     }
 
     /**
@@ -32,7 +53,8 @@ class SubcategoryController extends Controller
      */
     public function show(string $id)
     {
-        return view('subcategories.show');
+        $subcategory=Subcategories::find($id);
+        return view('subcategories.show')->with('subcategory', $subcategory);
     }
 
     /**
@@ -40,7 +62,9 @@ class SubcategoryController extends Controller
      */
     public function edit(string $id)
     {
-        return view('subcategories.update');
+        $subcategory=Subcategories::find($id);
+        $categories=Categories::all();
+        return view('subcategories.update', compact('subcategory','categories'));
     }
 
     /**
@@ -48,7 +72,17 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $subcategory=Subcategories::find($id);
 
+        $subcategory->update([
+            $subcategory->subcategory=$request->subcategory,
+            $subcategory->description=$request->description,
+            $subcategory->category_id=$request->category_id,
+            $subcategory->status=$request->status,
+        ]);
+
+        return redirect()->route('subcategory.index')
+            ->with('success','Subcategoría actualizada correctamente');
     }
 
     /**
@@ -56,6 +90,9 @@ class SubcategoryController extends Controller
      */
     public function destroy(string $id)
     {
-
+        $subcategory=Subcategories::find($id);
+        $subcategory->delete();
+        return redirect()->route('subcategory.index')
+            ->with('danger','Subcategoría eliminada correctamente');
     }
 }

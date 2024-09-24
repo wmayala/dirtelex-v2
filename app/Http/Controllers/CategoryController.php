@@ -2,13 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        return view('categories.index');
+        if($request)
+        {
+            $search=$request->input('search');
+            $categories=Categories::where('category','like','%'.$search.'%')->get();
+
+            return view('categories.index')
+                ->with('categories', $categories);
+        }
+        else
+        {
+            $categories=Categories::all();
+
+            return view('categories.index')
+                ->with('categories', $categories);
+        }
+
     }
 
     /**
@@ -24,7 +40,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        Categories::create($request->all());
+        return redirect()->route('category.index')
+            ->with('success', 'Categoría creada correctamente');
     }
 
     /**
@@ -32,7 +50,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        return view('categories.show');
+        $category=Categories::find($id);
+        return view('categories.show', compact('category'));
     }
 
     /**
@@ -40,7 +59,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        return view('categories.update');
+        $category = Categories::find($id);
+        return view('categories.update', compact('category'));
     }
 
     /**
@@ -48,7 +68,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
+        $category=Categories::find($id);
+        $category->update($request->all());
+        return redirect()
+            ->route('category.index')
+            ->with('success','Categoría actualizada correctamente');
     }
 
     /**
@@ -56,6 +80,10 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        
+        $category=Categories::find($id);
+        $category->delete();
+        return redirect()
+            ->route('category.index')
+            ->with('danger','Categoría eliminada correctamente');
     }
 }

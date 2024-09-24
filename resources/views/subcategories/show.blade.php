@@ -5,7 +5,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="row p-3 text-gray-900">
                     <div class="fs-3">
-                        {{ __("DETALLES")}}
+                        {{ __("DETALLES") }}
                     </div>
                 </div>
                 <div class="row p-5">
@@ -18,7 +18,7 @@
                                         type="text"
                                         id="subcategory"
                                         name="subcategory"
-                                        value="{{$subcategory->subcategory}}"
+                                        value="{{ $subcategory->subcategory }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -29,7 +29,7 @@
                                         type="text"
                                         id="description"
                                         name="description"
-                                        value="{{$subcategory->description?$subcategory->description:'No definida'}}"
+                                        value="{{ $subcategory->description?$subcategory->description:'No definida' }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -40,7 +40,7 @@
                                         type="text"
                                         id="category_id"
                                         name="category_id"
-                                        value="{{$subcategory->category->category}}"
+                                        value="{{ $subcategory->category->category }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -53,7 +53,7 @@
                                                 type="text"
                                                 id="status"
                                                 name="status"
-                                                value="{{$subcategory->status===1?'ACTIVO':'INACTIVO'}}"
+                                                value="{{ $subcategory->status===1?'ACTIVO':'INACTIVO' }}"
                                                 disabled>
                                         </div>
                                     </div>
@@ -62,8 +62,8 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <a href="{{route('subcategory.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
-                            <strong><< Regresar</strong>
+                        <a href="{{ route('subcategory.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                            <strong>Regresar</strong>
                         </a>
                     </div>
                 </div>

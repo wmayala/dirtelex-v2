@@ -51,12 +51,9 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-secondary mt-3 text-sm uppercase col-3" onclick="history.back()">
-                            <strong><< Regresar</strong>
-                        </button>
-                        {{-- <a href="{{ route('category.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
-                            <strong><< Regresar</strong>
-                        </a> --}}
+                        <a href="{{ route('category.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                            <strong>Regresar</strong>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -52,7 +52,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach($categories as $category)
+                                    @foreach($categories as $category)
                                     <tr>
                                         <td class="col-5">{{$category->category}}</td>
                                         <td class="col-5">
@@ -72,7 +72,7 @@
                                                 </div>
                                                 <div class="col-4">
 
-                                                    <form action="{{ route('category.delete', $category->id) }}" method="post">
+                                                    <form action="{{ route('category.destroy', $category->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" onclick="deleteObject()">
@@ -90,7 +90,7 @@
                                             @endif
                                         </td>
                                     </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -41,9 +41,9 @@
                                     <td>
                                         <select name="category_id" id="category_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                             <option selected>Seleccione una categoría</option>
-                                            {{--  @foreach($categories as $category)
+                                            @foreach($categories as $category)
                                             <option value="{{$category->id}}">{{$category->category}}</option>
-                                            @endforeach--}}
+                                            @endforeach
                                         </select>
                                     </td>
                                 </tr>
