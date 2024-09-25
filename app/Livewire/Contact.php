@@ -27,9 +27,6 @@ class Contact extends Component
 
     public function updatedSelectedDivision($division_id)
     {
-
-
-
         if(intval($division_id)==0)
         {
             $this->institution=Institutions::all();
@@ -38,7 +35,6 @@ class Contact extends Component
         {
             $this->institution=Institutions::where('division_id','=',$division_id)->get();
         }
-
     }
 
     public function render()

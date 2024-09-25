@@ -26,17 +26,6 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><label for="institution_id" class="uppercase">Institución:</label></td>
-                                    <td>
-                                        <select name="institution_id" id="institution_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
-                                            <option  selected>{{$division->institution->institution}}</option>
-                                            @foreach($institutions as $institution)
-                                            <option value="{{$institution->id}}">{{$institution->institution}}</option>
-                                            @endforeach
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td><label for="description" class="uppercase">Descripción:</label></td>
                                     <td>
                                         <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"

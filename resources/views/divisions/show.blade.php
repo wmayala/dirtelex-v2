@@ -23,17 +23,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><label for="institution_id" class="uppercase">Institución:</label></td>
-                                <td>
-                                    <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
-                                        type="text"
-                                        id="institution_id"
-                                        name="institution_id"
-                                        value="{{$division->institution->institution}}"
-                                        disabled>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td><label for="description" class="uppercase">Descripción:</label></td>
                                 <td>
                                     <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
@@ -64,7 +53,7 @@
                     </div>
                     <div class="text-center">
                         <a href="{{route('division.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
-                            <strong><< Regresar</strong>
+                            <strong>Regresar</strong>
                         </a>
                     </div>
                 </div>

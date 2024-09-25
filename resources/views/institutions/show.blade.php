@@ -18,7 +18,7 @@
                                         type="text"
                                         id="institution"
                                         name="institution"
-                                        value="{{$institution->institution}}"
+                                        value="{{ $institution->institution }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -29,7 +29,7 @@
                                         type="text"
                                         id="acronym"
                                         name="acronym"
-                                        value="{{$institution->acronym}}"
+                                        value="{{ $institution->acronym }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -40,7 +40,7 @@
                                         type="text"
                                         id="description"
                                         name="description"
-                                        value="{{$institution->description?$institution->description:'No definida'}}"
+                                        value="{{ $institution->description?$institution->description:'No definida' }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -51,18 +51,29 @@
                                         type="text"
                                         id="category_id"
                                         name="category_id"
-                                        value="{{$institution->category->category}}"
+                                        value="{{ $institution->category->category }}"
                                         disabled>
                                 </td>
                             </tr>
                             <tr>
-                                <td><label for="subcategory_id" class="uppercase">Categoría:</label></td>
+                                <td><label for="subcategory_id" class="uppercase">Subcategoría:</label></td>
                                 <td>
                                     <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                         type="text"
                                         id="subcategory_id"
                                         name="subcategory_id"
-                                        value="{{$institution->subcategory->subcategory}}"
+                                        value="{{ $institution->subcategory_id?$institution->subcategory->subcategory:'No definida' }}"
+                                        disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="division_id" class="uppercase">División:</label></td>
+                                <td>
+                                    <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
+                                        type="text"
+                                        id="division_id"
+                                        name="division_id"
+                                        value="{{ $institution->division_id?$institution->division->division:'No definida' }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -75,7 +86,7 @@
                                                 type="text"
                                                 id="status"
                                                 name="status"
-                                                value="{{$institution->status===1?'ACTIVO':'INACTIVO'}}"
+                                                value="{{ $institution->status===1?'ACTIVO':'INACTIVO' }}"
                                                 disabled>
                                         </div>
                                     </div>
@@ -84,8 +95,8 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <a href="{{route('institution.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
-                            <strong><< Regresar</strong>
+                        <a href="{{ route('institution.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                            <strong>Regresar</strong>
                         </a>
                     </div>
                 </div>

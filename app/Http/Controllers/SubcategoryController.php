@@ -81,8 +81,7 @@ class SubcategoryController extends Controller
             $subcategory->status=$request->status,
         ]);
 
-        return redirect()->route('subcategory.index')
-            ->with('success','Subcategoría actualizada correctamente');
+        return redirect()->route('subcategory.index')->with('success','Subcategoría actualizada correctamente');
     }
 
     /**

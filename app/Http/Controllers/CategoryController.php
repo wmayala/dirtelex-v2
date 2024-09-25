@@ -41,8 +41,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Categories::create($request->all());
-        return redirect()->route('category.index')
-            ->with('success', 'Categoría creada correctamente');
+        return redirect()->route('category.index')->with('success', 'Categoría creada correctamente');
     }
 
     /**
@@ -70,9 +69,7 @@ class CategoryController extends Controller
     {
         $category=Categories::find($id);
         $category->update($request->all());
-        return redirect()
-            ->route('category.index')
-            ->with('success','Categoría actualizada correctamente');
+        return redirect()->route('category.index')->with('success','Categoría actualizada correctamente');
     }
 
     /**

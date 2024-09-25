@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Divisions;
 use Illuminate\Http\Request;
 
 class DivisionController extends Controller
 {
     public function index(Request $request)
     {
-        return view('divisions.index');
+        if($request)
+        {
+            $search=$request->input('search');
+            $divisions=Divisions::where('division','like','%'.$search.'%')->get();
+            return view('divisions.index')->with('divisions', $divisions);
+        }
+        else
+        {
+            $divisions=Divisions::all();
+            return view('divisions.index')->with('divisions', $divisions);
+        }
     }
 
     /**
@@ -24,7 +35,8 @@ class DivisionController extends Controller
      */
     public function store(Request $request)
     {
-
+        Divisions::create($request->all());
+        return redirect()->route('division.index')->with('success', 'División creada correctamente');
     }
 
     /**
@@ -32,7 +44,8 @@ class DivisionController extends Controller
      */
     public function show(string $id)
     {
-        return view('divisions.show');
+        $division=Divisions::find($id);
+        return view('divisions.show')->with('division', $division);
     }
 
     /**
@@ -40,7 +53,8 @@ class DivisionController extends Controller
      */
     public function edit(string $id)
     {
-        return view('divisions.update');
+        $division=Divisions::find($id);
+        return view('divisions.update')->with('division', $division);
     }
 
     /**
@@ -48,7 +62,9 @@ class DivisionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
+        $division=Divisions::find($id);
+        $division->update($request->all());
+        return redirect()->route('division.index')->with('success','División actualizada correctamente');
     }
 
     /**
@@ -56,6 +72,8 @@ class DivisionController extends Controller
      */
     public function destroy(string $id)
     {
-
+        $division=Divisions::find($id);
+        $division->delete();
+        return redirect()->route('division.index')->with('danger','División eliminada correctamente');
     }
 }

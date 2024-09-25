@@ -21,4 +21,9 @@ class Categories extends Model
     {
         return $this->hasMany(Subcategories::class, 'category_id');
     }
+
+    public function institution()
+    {
+        return $this->hasMany(Institutions::class, 'category_id');
+    }
 }

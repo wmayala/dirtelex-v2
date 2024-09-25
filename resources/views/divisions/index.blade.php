@@ -46,19 +46,17 @@
                                 <thead>
                                     <tr>
                                         <th>NOMBRE</th>
-                                        <th>INSTITUCIÓN</th>
                                         <th>DESCRIPCIÓN</th>
                                         <th class="text-center">ACCIONES</th>
                                         <th class="text-center">ESTADO</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach($divisions as $division)
+                                    @foreach($divisions as $division)
                                     <tr>
-                                        <td class="col-3">{{$division->division}}</td>
-                                        <td class="col-4">{{$division->institution->institution}}</td>
-                                        <td class="col-3">{{$division->description?$division->description:'No definida'}}</td>
-                                        <td class="text-center">
+                                        <td class="col-5">{{$division->division}}</td>
+                                        <td class="col-5">{{$division->description?$division->description:'No definida'}}</td>
+                                        <td class="col text-center">
                                             <div class="row">
                                                 <div class="col-4">
                                                     <a href="{{route('division.show', $division->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -68,7 +66,7 @@
                                                 </div>
                                                 <div class="col-4">
 
-                                                    <form action="{{ route('division.delete', $division->id) }}" method="post">
+                                                    <form action="{{ route('division.destroy', $division->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" onclick="deleteObject()">
@@ -78,7 +76,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center">
+                                        <td class="col text-center">
                                             @if($division->status==1)
                                                 <span class="badge bg-success w-100">ACTIVO</span>
                                             @else
@@ -86,7 +84,7 @@
                                             @endif
                                         </td>
                                     </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

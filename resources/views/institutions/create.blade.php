@@ -51,9 +51,9 @@
                                     <td>
                                         <select name="category_id" id="category_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                             <option selected>Seleccione una categoría</option>
-                                            {{-- @foreach($categories as $category)
+                                            @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{$category->category}}</option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </td>
                                 </tr>
@@ -62,9 +62,22 @@
                                     <td>
                                         <select name="subcategory_id" id="subcategory_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                             <option selected>Seleccione una subcategoría</option>
-                                            {{-- @foreach($subcategories as $subcategory)
+                                            <option value="0">No posee</option>
+                                            @foreach($subcategories as $subcategory)
                                                 <option value="{{$subcategory->id}}">{{$subcategory->subcategory}}</option>
-                                            @endforeach --}}
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="division_id" class="uppercase">División:</label></td>
+                                    <td>
+                                        <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
+                                            <option selected>Seleccione una división</option>
+                                            <option value="0">No posee</option>
+                                            @foreach($divisions as $division)
+                                                <option value="{{$division->id}}">{{$division->division}}</option>
+                                            @endforeach
                                         </select>
                                     </td>
                                 </tr>
