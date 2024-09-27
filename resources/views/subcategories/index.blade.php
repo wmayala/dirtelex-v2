@@ -72,7 +72,7 @@
                                                         <form action="{{ route('subcategory.destroy', $subcategory->id) }}" method="post">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" onclick="deleteObject()">
+                                                            <button type="submit" >
                                                                 <i class="fa fa-trash" aria-hidden="true"></i>
                                                             </button>
                                                         </form>

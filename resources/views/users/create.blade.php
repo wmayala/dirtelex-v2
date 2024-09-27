@@ -20,7 +20,7 @@
                                                 type="text"
                                                 id="name"
                                                 name="name"
-                                                placeholder="Escriba su nombre"
+                                                placeholder="John Doe"
                                                 required>
                                         </td>
                                     </tr>
@@ -31,7 +31,7 @@
                                                 type="text"
                                                 id="email"
                                                 name="email"
-                                                placeholder="Escriba su correo electrónico">
+                                                placeholder="correo@dominio.com">
                                         </td>
                                     </tr>
                                     <tr>
@@ -41,7 +41,7 @@
                                                 type="password"
                                                 id="password"
                                                 name="password"
-                                                placeholder="Escriba su contraseña">
+                                                placeholder="[A-Z,a-z,0-9,*]">
                                         </td>
                                     </tr>
                                     <tr>

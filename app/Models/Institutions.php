@@ -36,4 +36,8 @@ class Institutions extends Model
         return $this->belongsTo(Divisions::class, 'division_id');
     }
 
+    public function contact()
+    {
+        return $this->hasMany(Contacts::class, 'institution_id');
+    }
 }

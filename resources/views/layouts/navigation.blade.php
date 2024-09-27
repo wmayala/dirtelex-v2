@@ -5,14 +5,14 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('directory.contacts') }}">
                         <x-application-logo-blue class="block h-9 w-auto fill-current text-gray-800"/>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="d-flex gap-1">
+                    <x-nav-link :href="route('directory.contacts')" :active="request()->routeIs('directory.contacts')" class="d-flex gap-1">
                         <i class="fa fa-book" aria-hidden="true"></i>
                         <span>{{ __('Directorio') }}</span>
                     </x-nav-link>

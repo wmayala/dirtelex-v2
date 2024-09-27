@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     @section('title','Detalles del contacto')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -176,7 +176,7 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <a href="{{route('contact.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                        <a href="{{route('directory.contacts')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
                             <strong>Regresar</strong>
                         </a>
                     </div>
@@ -184,4 +184,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-guest-layout>

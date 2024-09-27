@@ -22,4 +22,9 @@ class Divisions extends Model
     {
         return $this->hasMany(Institutions::class, 'institution_id');
     }
+
+    public function contact()
+    {
+        return $this->hasMany(Contacts::class, 'division_id');
+    }
 }

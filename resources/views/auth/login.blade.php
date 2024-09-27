@@ -3,8 +3,10 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="container col-lg-4 col-xl-4 col-xxl-4 d-flex flex-column align-items-center justify-content-center rounded-lg shadow-lg bg-white p-5 mt-5">
-        <div>
+        <div class="d-flex flex-column align-items-center">
             <x-application-logo-blue class="block h-9 w-auto fill-current text-gray-800"/>
+            <div class="fw-bold">DIRTELEX</div>
+            <div class="fw-bold">Directorio Telefónico del Exterior</div>
         </div>
         <form method="POST" action="{{ route('login') }}" class="w-full">
             @csrf

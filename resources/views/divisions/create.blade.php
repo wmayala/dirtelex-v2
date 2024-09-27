@@ -9,7 +9,6 @@
                         {{ __("AGREGAR DIVISIÓN") }}
                     </div>
                 </div>
-
                 <div class="row p-5">
                     <form action="{{route('division.store')}}" method="POST">
                         @csrf
@@ -36,7 +35,6 @@
                                             placeholder="Escriba una descripción">
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td><label for="status" class="uppercase">Estado:</label></td>
                                     <td>
@@ -50,7 +48,6 @@
                                                     checked>
                                                 <label for="act">ACTIVO</label>
                                             </div>
-
                                             <div class="col-6 d-flex align-items-center gap-2">
                                                 <input class="col-6 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
                                                     type="radio"
@@ -68,25 +65,13 @@
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Guardar</strong>
                             </button>
-
-                            <a href="{{route('division.index')}}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
+                            <a href="{{ route('division.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>
-
-
-
                     </form>
-
                 </div>
-
-
-
-
-
-
-
-             </div>
-         </div>
-     </div>
- </x-app-layout>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

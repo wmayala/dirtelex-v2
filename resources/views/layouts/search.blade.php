@@ -4,7 +4,6 @@
         <input class="bg-gray-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-50 p-2.5"
             type="text"
             name="search"
-
             autofocus>
         <button type="submit"
             class="btn rounded uppercase fw-bold d-flex justify-content-between align-items-center w-auto"

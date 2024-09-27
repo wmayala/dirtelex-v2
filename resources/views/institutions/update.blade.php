@@ -60,23 +60,39 @@
                                 <tr>
                                     <td><label for="subcategory_id" class="uppercase">Subcategoría:</label></td>
                                     <td>
-                                        <select name="subcategory_id" id="subcategory_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
-                                            @foreach($subcategories as $subcategory)
-                                            <option value="{{ $subcategory->id }}" {{ $institution->subcategory_id==$subcategory->id?'selected':'' }}>
-                                                {{ $subcategory->subcategory }}
-                                            </option>
-                                            @endforeach
-                                        </select>
+                                        @if(!is_null($institution->subcategory_id))
+                                            <select name="subcategory_id" id="subcategory_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
+                                                @foreach($subcategories as $subcategory)
+                                                    <option value="{{ $subcategory->id }}" {{ $institution->subcategory_id==$subcategory->id?'selected':'' }}>{{ $subcategory->subcategory }}</option>
+                                                @endforeach
+                                            </select>
+                                        @else
+                                            <select name="subcategory_id" id="subcategory_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
+                                                <option value="" selected>No definida</option>
+                                                @foreach($subcategories as $subcategory)
+                                                    <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory }}</option>
+                                                @endforeach
+                                            </select>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="division_id" class="uppercase">División:</label></td>
                                     <td>
-                                        <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
-                                            @foreach($divisions as $division)
-                                            <option value="{{ $division->id }}" {{ $institution->division_id==$division->id?'selected':'' }} >{{$division->division}}</option>
-                                            @endforeach
-                                        </select>
+                                        @if(!is_null($institution->division_id))
+                                            <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
+                                                @foreach($divisions as $division)
+                                                    <option value="{{ $division->id }}" {{ $institution->division_id==$division->id?'selected':'' }} >{{$division->division}}</option>
+                                                @endforeach
+                                            </select>
+                                        @else
+                                            <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
+                                                <option value="" selected>No definida</option>
+                                                @foreach($divisions as $division)
+                                                    <option value="{{ $division->id }}" {{ $institution->division_id==$division->id?'selected':'' }} >{{$division->division}}</option>
+                                                @endforeach
+                                            </select>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>

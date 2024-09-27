@@ -40,9 +40,6 @@ class Contact extends Component
     public function render()
     {
         $division=Divisions::all();
-
-        return view('livewire.contact', [
-            'division'=>$division,
-        ]);
+        return view('livewire.contact', ['division'=>$division]);
     }
 }

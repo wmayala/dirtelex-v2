@@ -52,13 +52,13 @@
                                         <th>CORREO ELECTRÓNICO</th>
                                         <th>INSTITUCIÓN</th>
                                         <th>CATEGORÍA</th>
-                                        <th>SUBCATEGORÍA</th>
+                                        <th class="text-center">SUBCATEGORÍA<br>DIVISIÓN</th>
                                         <th class="text-center">ACCIONES</th>
                                         <th class="text-center">ESTADO</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {{-- @foreach($contacts as $contact)
+                                @foreach($contacts as $contact)
                                     <tr>
                                         <td>
                                             <span class="fw-bold fs-5 fst-italic">{{$contact->contact}}</span><br>
@@ -71,10 +71,10 @@
                                             <span>{{$contact->extension?'Ext.: '.$contact->extension:''}}</span><br>
                                             <span>{{$contact->fax?'Fax: '.$contact->fax:''}}</span>
                                         </td>
-                                        <td>{{$contact->email}}</td>
-                                        <td>{{$contact->institution->institution}}</td>
-                                        <td>{{$contact->institution->category->category}}</td>
-                                        <td>{{$contact->institution->subcategory->subcategory}}</td>
+                                        <td>{{ $contact->email }}</td>
+                                        <td>{{ $contact->institution->institution }}</td>
+                                        <td>{{ $contact->institution->category->category }}</td>
+                                        <td>{{ ($contact->subcatgory_id?$contact->institution->subcategory->subcategory:$contact->division_id)?$contact->institution->division->division:'No definida' }}</td>
                                         <td class="text-center">
                                             <div class="row">
                                                 <div class="col-4">
@@ -84,8 +84,7 @@
                                                     <a href="{{route('contact.edit', $contact->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-
-                                                    <form action="{{ route('contact.delete', $contact->id) }}" method="post">
+                                                    <form action="{{ route('contact.destroy', $contact->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" >
@@ -103,7 +102,7 @@
                                             @endif
                                         </td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

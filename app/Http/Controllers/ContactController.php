@@ -3,12 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contacts;
+use App\Models\Institutions;
+use App\Models\Divisions;
 
 class ContactController extends Controller
 {
     public function index(Request $request)
     {
-        return view('contacts.index');
+        if($request)
+        {
+            $search=$request->input('search');
+            $contacts=Contacts::where('contact','like','%'.$search.'%')->get();
+            return view('contacts.index')->with('contacts', $contacts);
+        }
+        else
+        {
+            $contacts=Contacts::all();
+            return view('contacts.index')->with('contacts', $contacts);
+        }
     }
 
     /**
@@ -24,7 +37,26 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-
+        $contact=new Contacts([
+            'contact'=>$request->contact,
+            'position'=>$request->position,
+            'code'=>$request->code,
+            'phone'=>$request->phone,
+            'extension'=>$request->extension,
+            'mobile'=>$request->mobile,
+            'fax'=>$request->fax,
+            'email'=>$request->email,
+            'specialFeature'=>$request->specialFeature,
+            'clarification'=>$request->clarification,
+            'address'=>$request->address,
+            'typeContact'=>$request->typeContact,
+            'language'=>$request->language,
+            'status'=>$request->status,
+        ]);
+        $contact->division()->associate(Divisions::find($request->division_id));
+        $contact->institution()->associate(Institutions::find($request->institution_id));
+        $contact->save();
+        return redirect()->route('contact.index')->with('success','Contacto creado correctamente');
     }
 
     /**
@@ -32,7 +64,8 @@ class ContactController extends Controller
      */
     public function show(string $id)
     {
-        return view('contacts.show');
+        $contact=Contacts::find($id);
+        return view('contacts.show')->with('contact', $contact);
     }
 
     /**
@@ -40,7 +73,10 @@ class ContactController extends Controller
      */
     public function edit(string $id)
     {
-        return view('contacts.update');
+        $contact=Contacts::find($id);
+        $institutions=Institutions::get();
+        $divisions=Divisions::get();
+        return view('contacts.update', compact('contact','institutions','divisions'));
     }
 
     /**
@@ -48,7 +84,26 @@ class ContactController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $contact=Contacts::find($id);
 
+        $contact->update([
+            $contact->institution_id=$request->institution_id,
+            $contact->division_id=$request->division_id,
+            $contact->contact=$request->contact,
+            $contact->position=$request->position,
+            $contact->code=$request->code,
+            $contact->phone=$request->phone,
+            $contact->extension=$request->extension,
+            $contact->mobile=$request->mobile,
+            $contact->fax=$request->fax,
+            $contact->email=$request->email,
+            $contact->specialFeature=$request->specialFeature,
+            $contact->clarification=$request->clarification,
+            $contact->typeContact=$request->typeContact,
+            $contact->language=$request->language,
+            $contact->status=$request->status,
+        ]);
+        return redirect()->route('contact.index')->with('success','Contacto actualizado correctamente');
     }
 
     /**
@@ -56,6 +111,8 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-
+        $contact=Contacts::find($id);
+        $contact->delete();
+        return redirect()->route('contact.index')->with('danger','Contacto eliminado correctamente');
     }
 }

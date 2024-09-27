@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="row p-5">
-                    <form action="{{route('contact.update',$contact->id)}}" method="POST">
+                    <form action="{{ route('contact.update',$contact->id) }}" method="POST">
                         @csrf @method('PUT')
                         <div class="flex justify-center align-center">
                             <table class="col-6 w-75">
@@ -19,9 +19,9 @@
                                     <td><label for="institution_id" class="uppercase">Institución:</label></td>
                                     <td>
                                         <select name="institution_id" id="institution_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
-                                            <option selected>{{$contact->institution->institution}}</option>
+
                                             @foreach($institutions as $institution)
-                                                <option value="{{$institution->id}}">{{$institution->institution}}</option>
+                                                <option value="{{ $institution->id }}" {{ $contact->institution_id==$institution->id?'selected':'' }}>{{ $institution->institution }}</option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -29,12 +29,21 @@
                                 <tr>
                                     <td><label for="division_id" class="uppercase">División:</label></td>
                                     <td>
-                                        <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
-                                            <option selected>{{ $contact->division?$contact->division->division:'No existen divisiones asociadas'}}</option>
-                                            @foreach($divisions as $division)
-                                                <option value="{{$division->id}}">{{$division->division}}</option>
-                                            @endforeach
-                                        </select>
+                                        @if(!is_null($contact->division_id))
+                                            <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
+                                                @foreach($divisions as $division)
+                                                    <option value="{{ $division->id }}" {{ $contact->division_id==$division->id?'selected':'' }}>{{ $division->division }}</option>
+                                                @endforeach
+                                            </select>
+                                        @else
+                                            <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
+                                                <option value="" selected>No definida</option>
+                                                @foreach($divisions as $division)
+                                                    <option value="{{ $division->id }}">{{ $division->division }}</option>
+                                                @endforeach
+                                            </select>
+                                        @endif
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -44,7 +53,7 @@
                                             type="text"
                                             id="contact"
                                             name="contact"
-                                            value="{{$contact->contact}}"
+                                            value="{{ $contact->contact }}"
                                             required>
                                     </td>
                                 </tr>
@@ -55,7 +64,7 @@
                                             type="text"
                                             id="position"
                                             name="position"
-                                            value="{{$contact->position}}">
+                                            value="{{ $contact->position }}">
                                     </td>
                                 </tr>
                                 <tr>
@@ -66,32 +75,32 @@
                                                 type="text"
                                                 id="code"
                                                 name="code"
-                                                value="{{$contact->code}}">
+                                                value="{{ $contact->code }}">
 
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="phone"
                                                 name="phone"
-                                                value="{{$contact->phone}}">
+                                                value="{{ $contact->phone }}">
 
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="extension"
                                                 name="extension"
-                                                value="{{$contact->extension}}">
+                                                value="{{ $contact->extension }}">
                                         </div>
                                         <div class="d-flex justify-content-center align-items-center gap-2">
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="mobile"
                                                 name="mobile"
-                                                value="{{$contact->mobile}}">
+                                                value="{{ $contact->mobile }}">
 
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="fax"
                                                 name="fax"
-                                                value="{{$contact->fax}}">
+                                                value="{{ $contact->fax }}">
                                         </div>
                                     </td>
                                 </tr>
@@ -103,7 +112,7 @@
                                             type="email"
                                             id="email"
                                             name="email"
-                                            value="{{$contact->email}}">
+                                            value="{{ $contact->email }}">
                                     </td>
                                 </tr>
 
@@ -113,7 +122,7 @@
                                         <textarea class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                             id="specialFeature"
                                             name="specialFeature"
-                                        >{{$contact->specialFeature}}</textarea>
+                                        >{{ $contact->specialFeature }}</textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -123,7 +132,7 @@
                                         <textarea class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                             id="clarification"
                                             name="clarification"
-                                            >{{$contact->clarification}}</textarea>
+                                            >{{ $contact->clarification }}</textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -136,7 +145,7 @@
                                                     id="person"
                                                     name="typeContact"
                                                     value="1"
-                                                    {{$contact->typeContact===1?'checked':''}}>
+                                                    {{ $contact->typeContact===1?'checked':'' }}>
                                                 <label for="act">PERSONA</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center gap-2">
@@ -145,7 +154,7 @@
                                                     id="area"
                                                     name="typeContact"
                                                     value="0"
-                                                    {{$contact->typeContact===0?'checked':''}}>
+                                                    {{ $contact->typeContact===0?'checked':'' }}>
                                                 <label for="inact">ÁREA</label>
                                             </div>
                                         </div>
@@ -161,7 +170,7 @@
                                                     id="es"
                                                     name="language"
                                                     value="1"
-                                                    {{$contact->language===1?'checked':''}}>
+                                                    {{ $contact->language===1?'checked':'' }}>
                                                 <label for="es">ESPAÑOL</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center gap-2">
@@ -170,7 +179,7 @@
                                                     id="en"
                                                     name="language"
                                                     value="0"
-                                                    {{$contact->language==0?'checked':''}}>
+                                                    {{ $contact->language==0?'checked':'' }}>
                                                 <label for="en">INGLÉS</label>
                                             </div>
                                         </div>
@@ -186,7 +195,7 @@
                                                     id="act"
                                                     name="status"
                                                     value="1"
-                                                    {{$contact->status===1?'checked':''}}>
+                                                    {{ $contact->status===1?'checked':'' }}>
                                                 <label for="act">ACTIVO</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center gap-2">
@@ -195,7 +204,7 @@
                                                     id="inact"
                                                     name="status"
                                                     value="0"
-                                                    {{$contact->status===0?'checked':''}}>
+                                                    {{ $contact->status===0?'checked':'' }}>
                                                 <label for="inact">INACTIVO</label>
                                             </div>
                                         </div>
@@ -207,13 +216,13 @@
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Guardar</strong>
                             </button>
-                            <a href="{{route('contact.index')}}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
+                            <a href="{{ route('contact.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>
                     </form>
                 </div>
-             </div>
-         </div>
-     </div>
- </x-app-layout>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
