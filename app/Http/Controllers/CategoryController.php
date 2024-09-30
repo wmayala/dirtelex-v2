@@ -13,18 +13,12 @@ class CategoryController extends Controller
         {
             $search=$request->input('search');
             $categories=Categories::where('category','like','%'.$search.'%')->get();
-
-            return view('categories.index')
-                ->with('categories', $categories);
         }
         else
         {
             $categories=Categories::all();
-
-            return view('categories.index')
-                ->with('categories', $categories);
         }
-
+        return view('categories.index')->with('categories', $categories);
     }
 
     /**
@@ -79,8 +73,6 @@ class CategoryController extends Controller
     {
         $category=Categories::find($id);
         $category->delete();
-        return redirect()
-            ->route('category.index')
-            ->with('danger','Categoría eliminada correctamente');
+        return redirect()->route('category.index')->with('danger','Categoría eliminada correctamente');
     }
 }

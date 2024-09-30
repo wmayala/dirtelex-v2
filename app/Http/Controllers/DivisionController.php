@@ -13,13 +13,12 @@ class DivisionController extends Controller
         {
             $search=$request->input('search');
             $divisions=Divisions::where('division','like','%'.$search.'%')->get();
-            return view('divisions.index')->with('divisions', $divisions);
         }
         else
         {
             $divisions=Divisions::all();
-            return view('divisions.index')->with('divisions', $divisions);
         }
+        return view('divisions.index')->with('divisions', $divisions);
     }
 
     /**

@@ -15,13 +15,12 @@ class ContactController extends Controller
         {
             $search=$request->input('search');
             $contacts=Contacts::where('contact','like','%'.$search.'%')->get();
-            return view('contacts.index')->with('contacts', $contacts);
         }
         else
         {
             $contacts=Contacts::all();
-            return view('contacts.index')->with('contacts', $contacts);
         }
+        return view('contacts.index')->with('contacts', $contacts);
     }
 
     /**
@@ -85,7 +84,6 @@ class ContactController extends Controller
     public function update(Request $request, string $id)
     {
         $contact=Contacts::find($id);
-
         $contact->update([
             $contact->institution_id=$request->institution_id,
             $contact->division_id=$request->division_id,

@@ -1,5 +1,15 @@
 <x-guest-layout>
     @section('title','Inicio de sesión')
+    @if(session('danger'))
+        <div class="d-flex justify-content-center">
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                <strong>{{session('danger')}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    {{-- <span aria-hidden="true">&times;</span> --}}
+                </button>
+            </div>
+        </div>
+    @endif
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="container col-lg-4 col-xl-4 col-xxl-4 d-flex flex-column align-items-center justify-content-center rounded-lg shadow-lg bg-white p-5 mt-5">

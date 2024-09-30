@@ -16,13 +16,12 @@ class InstitutionController extends Controller
         {
             $search=$request->input('search');
             $institutions=Institutions::where('institution','like','%'.$search.'%')->get();
-            return view('institutions.index')->with('institutions', $institutions);
         }
         else
         {
             $institutions=Institutions::all();
-            return view('institutions.index')->with('institutions', $institutions);
         }
+        return view('institutions.index')->with('institutions', $institutions);
     }
 
     /**
@@ -47,13 +46,10 @@ class InstitutionController extends Controller
             'description'=>$request->description,
             'status'=>$request->status,
         ]);
-
         $institution->category()->associate(Categories::find($request->category_id));
         $institution->subcategory()->associate(Subcategories::find($request->subcategory_id));
         $institution->division()->associate(Divisions::find($request->division_id));
-
         $institution->save();
-
         return redirect()->route('institution.index')->with('success','Institución creada correctamente');
     }
 
@@ -84,7 +80,6 @@ class InstitutionController extends Controller
     public function update(Request $request, string $id)
     {
         $institution=Institutions::find($id);
-
         $institution->update([
             $institution->institution=$request->institution,
             $institution->acronym=$request->acronym,
@@ -94,7 +89,6 @@ class InstitutionController extends Controller
             $institution->division_id=$request->division_id,
             $institution->status=$request->status,
         ]);
-
         return redirect()->route('institution.index')->with('success','Institución actualizada correctamente');
     }
 

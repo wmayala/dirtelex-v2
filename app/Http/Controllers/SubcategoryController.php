@@ -14,13 +14,12 @@ class SubcategoryController extends Controller
         {
             $search=$request->input('search');
             $subcategories=Subcategories::where('subcategory','like','%'.$search.'%')->get();
-            return view('subcategories.index')->with('subcategories', $subcategories);
         }
         else
         {
             $subcategories=Subcategories::get();
-            return view('subcategories.index')->with('subcategories', $subcategories);
         }
+        return view('subcategories.index')->with('subcategories', $subcategories);
     }
 
     /**
@@ -44,7 +43,6 @@ class SubcategoryController extends Controller
         ]);
         $subcategories->category()->associate(Categories::find($request->category_id));
         $subcategories->save();
-
         return redirect()->route('subcategory.index')->with('success','Subcategoría creada correctamente');
     }
 
@@ -73,14 +71,12 @@ class SubcategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $subcategory=Subcategories::find($id);
-
         $subcategory->update([
             $subcategory->subcategory=$request->subcategory,
             $subcategory->description=$request->description,
             $subcategory->category_id=$request->category_id,
             $subcategory->status=$request->status,
         ]);
-
         return redirect()->route('subcategory.index')->with('success','Subcategoría actualizada correctamente');
     }
 
@@ -91,7 +87,6 @@ class SubcategoryController extends Controller
     {
         $subcategory=Subcategories::find($id);
         $subcategory->delete();
-        return redirect()->route('subcategory.index')
-            ->with('danger','Subcategoría eliminada correctamente');
+        return redirect()->route('subcategory.index')->with('danger','Subcategoría eliminada correctamente');
     }
 }

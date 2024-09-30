@@ -13,15 +13,12 @@ class UserController extends Controller
         {
             $search=$request->input('search');
             $users=User::where('name','like','%'.$search.'%')->get();
-            return view('users.index')
-                ->with('users', $users);
         }
         else
         {
             $users=User::get();
-            return view('users.index')
-                ->with('users', $users);
         }
+        return view('users.index')->with('users', $users);
     }
 
     /**
@@ -43,17 +40,13 @@ class UserController extends Controller
             'password'=>'required|min:8',
             'status'=>'required|boolean',
         ]);
-
         $user=new User([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$request->password,
         ]);
-
         $user->save();
-
-        return redirect()->route('user.index')
-            ->with('success','Usuario creado correctamente');
+        return redirect()->route('user.index')->with('success','Usuario creado correctamente');
     }
 
     /**
@@ -80,24 +73,19 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         $user=User::find($id);
-
         $request->validate([
             'name'=>'required|string|max:255',
             'email'=>'required|email',
             'new_password'=>'min:8|nullable',
             'status'=>'required|boolean',
         ]);
-
         $user->update([
             $user->name=$request->name,
             $user->email=$request->email,
             $user->password=$request->new_password==null?$user->password:$request->new_password,
             $user->status=$request->status,
         ]);
-
-        return redirect()
-            ->route('user.index')
-            ->with('success','Usuario actualizado correctamente');
+        return redirect()->route('user.index')->with('success','Usuario actualizado correctamente');
     }
 
     /**

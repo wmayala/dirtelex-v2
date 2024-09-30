@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\CheckActiveUser;
 use Illuminate\Support\Facades\Route;
 
 // RUTAS DE DIRECTORIO
@@ -24,7 +25,7 @@ Route::get('/directory/divisions',[DirectoryController::class,'divisions_dir'])-
 Route::get('/directory/divisions/{id}',[DirectoryController::class,'divisions_show'])->name('directory.divisions_show');
 
 // RUTAS DE ADMINISTRACIÓN
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', CheckActiveUser::class)->group(function () {
     Route::resource('contact', ContactController::class);
     Route::resource('institution', InstitutionController::class);
     Route::resource('category', CategoryController::class);
