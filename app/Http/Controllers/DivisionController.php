@@ -34,6 +34,11 @@ class DivisionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'division'=>'required|string|max:255',
+            'description'=>'required|string|max:255',
+            'status'=>'boolean|required',
+        ]);
         Divisions::create($request->all());
         return redirect()->route('division.index')->with('success', 'División creada correctamente');
     }
@@ -62,6 +67,11 @@ class DivisionController extends Controller
     public function update(Request $request, string $id)
     {
         $division=Divisions::find($id);
+        $request->validate([
+            'division'=>'required|string|max:255',
+            'description'=>'required|string|max:255',
+            'status'=>'boolean|required',
+        ]);
         $division->update($request->all());
         return redirect()->route('division.index')->with('success','División actualizada correctamente');
     }

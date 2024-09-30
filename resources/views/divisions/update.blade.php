@@ -23,6 +23,7 @@
                                             id="division"
                                             name="division"
                                             value="{{$division->division}}">
+                                            @error('division')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>

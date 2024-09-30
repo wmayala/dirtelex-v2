@@ -9,6 +9,7 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
+        // Valida si se escribió algo en el campo de búsqueda
         if($request)
         {
             $search=$request->input('search');
@@ -34,6 +35,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'category'=>'string|required|max:255',
+            'description'=>'string|nullable|max:255',
+            'status'=>'boolean|required',
+        ]);
         Categories::create($request->all());
         return redirect()->route('category.index')->with('success', 'Categoría creada correctamente');
     }
@@ -62,6 +68,11 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $category=Categories::find($id);
+        $request->validate([
+            'category'=>'string|required|max:255',
+            'description'=>'string|nullable|max:255',
+            'status'=>'boolean|required',
+        ]);
         $category->update($request->all());
         return redirect()->route('category.index')->with('success','Categoría actualizada correctamente');
     }
