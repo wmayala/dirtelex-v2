@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="row p-5">
-                    <form action="{{route('institution.store')}}" method="POST">
+                    <form action="{{ route('institution.store') }}" method="POST">
                         @csrf
                         <div class="flex justify-center align-center">
                             <table class="col-6">
@@ -50,7 +50,7 @@
                                         <select name="category_id" id="category_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                             <option selected>Seleccione una categoría</option>
                                             @foreach($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->category}}</option>
+                                                <option value="{{ $category->id }}">{{ $category->category }}</option>
                                             @endforeach
                                         </select>
                                         @error('category_id')<div class="text-danger text-end fw-bold">La categoría es requerida</div>@enderror
@@ -63,7 +63,7 @@
                                             <option selected>Seleccione una subcategoría</option>
                                             <option value="0">No posee</option>
                                             @foreach($subcategories as $subcategory)
-                                                <option value="{{$subcategory->id}}">{{$subcategory->subcategory}}</option>
+                                                <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory }}</option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -75,7 +75,7 @@
                                             <option selected>Seleccione una división</option>
                                             <option value="0">No posee</option>
                                             @foreach($divisions as $division)
-                                                <option value="{{$division->id}}">{{$division->division}}</option>
+                                                <option value="{{ $division->id }}">{{ $division->division }}</option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -110,7 +110,7 @@
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Guardar</strong>
                             </button>
-                            <a href="{{route('institution.index')}}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
+                            <a href="{{ route('institution.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>

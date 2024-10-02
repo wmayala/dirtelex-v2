@@ -99,7 +99,7 @@
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="usuario@mail.com">
+                            placeholder="usuario@dominio.com">
                     </td>
                 </tr>
                 <tr>

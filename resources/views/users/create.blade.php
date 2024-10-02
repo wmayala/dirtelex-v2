@@ -20,7 +20,7 @@
                                                 type="text"
                                                 id="name"
                                                 name="name"
-                                                placeholder="John Doe"
+                                                placeholder="Nombre de usuario"
                                                 required>
                                         </td>
                                     </tr>
@@ -31,7 +31,7 @@
                                                 type="text"
                                                 id="email"
                                                 name="email"
-                                                placeholder="correo@dominio.com">
+                                                placeholder="usuario@dominio.com">
                                         </td>
                                     </tr>
                                     <tr>

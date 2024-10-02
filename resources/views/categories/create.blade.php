@@ -66,7 +66,7 @@
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Guardar</strong>
                             </button>
-                            <a href="{{route('category.index')}}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
+                            <a href="{{ route('category.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>
