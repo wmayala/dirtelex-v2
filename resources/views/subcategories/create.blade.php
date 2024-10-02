@@ -22,8 +22,8 @@
                                             type="text"
                                             id="subcategory"
                                             name="subcategory"
-                                            placeholder="Escriba el nombre de la subcategoría"
-                                            required>
+                                            placeholder="Escriba el nombre de la subcategoría">
+                                            @error('subcategory')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>
@@ -45,6 +45,7 @@
                                             <option value="{{$category->id}}">{{$category->category}}</option>
                                             @endforeach
                                         </select>
+                                        @error('category_id')<div class="text-danger text-end fw-bold">La categoría es requerida</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>

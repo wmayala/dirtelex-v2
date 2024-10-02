@@ -22,7 +22,8 @@
                                             type="text"
                                             id="category"
                                             name="category"
-                                            value="{{$category->category}}">
+                                            value="{{ $category->category }}">
+                                        @error('category')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>
@@ -32,11 +33,7 @@
                                             type="text"
                                             id="description"
                                             name="description"
-                                            @if($category->description)
-                                                value="{{$category->description}}"
-                                            @else
-                                                value="No definida"
-                                            @endif>
+                                            value="{{ $category->description?$category->description:'No definida' }}">
                                     </td>
                                 </tr>
                                 <tr>

@@ -22,8 +22,8 @@
                                             type="text"
                                             id="institution"
                                             name="institution"
-                                            placeholder="Escriba el nombre de la institución"
-                                            required>
+                                            placeholder="Escriba el nombre de la institución">
+                                            @error('institution')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>
@@ -55,6 +55,7 @@
                                                 <option value="{{$category->id}}">{{$category->category}}</option>
                                             @endforeach
                                         </select>
+                                        @error('category_id')<div class="text-danger text-end fw-bold">La categoría es requerida</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>
@@ -117,7 +118,7 @@
                         </div>
                     </form>
                 </div>
-             </div>
-         </div>
-     </div>
- </x-app-layout>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

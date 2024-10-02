@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="row p-5">
-                    <form action="{{route('institution.update',$institution->id)}}" method="POST">
+                    <form action="{{ route('institution.update', $institution->id) }}" method="POST">
                         @csrf @method('PUT')
                         <div class="flex justify-center align-center">
                             <table class="col-6">
@@ -23,6 +23,7 @@
                                             id="institution"
                                             name="institution"
                                             value="{{ $institution->institution }}">
+                                            @error('institution')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>
@@ -55,6 +56,7 @@
                                             </option>
                                             @endforeach
                                         </select>
+                                        @error('category_id')<div class="text-danger text-end fw-bold">La categoría es requerida</div>@enderror
                                     </td>
                                 </tr>
                                 <tr>

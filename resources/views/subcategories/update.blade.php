@@ -43,10 +43,8 @@
                                     <td><label for="category_id" class="uppercase">Categoría:</label></td>
                                     <td>
                                         <select name="category_id" id="category_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
-                                            {{-- <option >Seleccione una categoría</option> --}}
-                                            <option  selected>{{$subcategory->category->category}}</option>
                                             @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->category}}</option>
+                                            <option value="{{ $category->id }}" {{ $subcategory->category_id==$category->id?'selected':'' }}>{{ $category->category }}</option>
                                             @endforeach
                                         </select>
                                     </td>

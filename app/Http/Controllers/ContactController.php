@@ -36,6 +36,23 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'contact'=>'required|string|max:255',
+            'position'=>'string|nullable|max:255',
+            'code'=>'string|nullable',
+            'phone'=>'string|nullable',
+            'extension'=>'string|nullable',
+            'mobile'=>'string|nullable',
+            'fax'=>'string|nullable',
+            'email'=>'email|nullable',
+            'specialFeature'=>'string|nullable',
+            'clarification'=>'string|nullable',
+            'typeContact'=>'boolean|required',
+            'language'=>'boolean|required',
+            'status'=>'boolean|required',
+            'division_id'=>'nullable',
+            'institution_id'=>'required',
+        ]);
         $contact=new Contacts([
             'contact'=>$request->contact,
             'position'=>$request->position,
@@ -84,6 +101,23 @@ class ContactController extends Controller
     public function update(Request $request, string $id)
     {
         $contact=Contacts::find($id);
+        $request->validate([
+            'contact'=>'required|string|max:255',
+            'position'=>'string|nullable|max:255',
+            'code'=>'string|nullable',
+            'phone'=>'string|nullable',
+            'extension'=>'string|nullable',
+            'mobile'=>'string|nullable',
+            'fax'=>'string|nullable',
+            'email'=>'email|nullable',
+            'specialFeature'=>'string|nullable',
+            'clarification'=>'string|nullable',
+            'typeContact'=>'boolean|required',
+            'language'=>'boolean|required',
+            'status'=>'boolean|required',
+            'division_id'=>'nullable',
+            'institution_id'=>'required',
+        ]);
         $contact->update([
             $contact->institution_id=$request->institution_id,
             $contact->division_id=$request->division_id,

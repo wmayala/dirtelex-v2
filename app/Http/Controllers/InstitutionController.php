@@ -40,6 +40,15 @@ class InstitutionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'institution'=>'required|string|max:255',
+            'acronym'=>'string|nullable',
+            'description'=>'string|nullable|max:255',
+            'category_id'=>'required',
+            'subcategory_id'=>'nullable',
+            'division_id'=>'nullable',
+            'status'=>'boolean|required',
+        ]);
         $institution=new Institutions([
             'institution'=>$request->institution,
             'acronym'=>$request->acronym,
@@ -80,6 +89,15 @@ class InstitutionController extends Controller
     public function update(Request $request, string $id)
     {
         $institution=Institutions::find($id);
+        $request->validate([
+            'institution'=>'required|string|max:255',
+            'acronym'=>'string|nullable',
+            'description'=>'string|nullable|max:255',
+            'category_id'=>'required',
+            'subcategory_id'=>'nullable',
+            'division_id'=>'nullable',
+            'status'=>'boolean|required',
+        ]);
         $institution->update([
             $institution->institution=$request->institution,
             $institution->acronym=$request->acronym,

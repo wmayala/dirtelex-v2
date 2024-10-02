@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="row p-5">
-                    <form action="{{route('division.store')}}" method="POST">
+                    <form action="{{ route('division.store') }}" method="POST">
                         @csrf
                         <div class="flex justify-center align-center">
                             <table class="col-6">

@@ -36,6 +36,12 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'subcategory'=>'required|string|max:255',
+            'description'=>'string|nullable|max:255',
+            'category_id'=>'required',
+            'status'=>'boolean|required',
+        ]);
         $subcategories=new Subcategories([
             'subcategory'=>$request->subcategory,
             'description'=>$request->description,
@@ -71,6 +77,12 @@ class SubcategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $subcategory=Subcategories::find($id);
+        $request->validate([
+            'subcategory'=>'required|string|max:255',
+            'description'=>'string|nullable|max:255',
+            'category_id'=>'required',
+            'status'=>'boolean|required',
+        ]);
         $subcategory->update([
             $subcategory->subcategory=$request->subcategory,
             $subcategory->description=$request->description,

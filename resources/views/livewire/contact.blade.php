@@ -1,5 +1,5 @@
 <div>
-    <form action="{{route('contact.store')}}" method="POST">
+    <form action="{{ route('contact.store' )}}" method="POST">
         @csrf
         <div class="flex justify-center align-center">
             <table class="col-6 w-75">
@@ -22,18 +22,19 @@
                     <td><label for="institution_id" class="uppercase">Institución:</label></td>
                     <td>
                         @if(!is_null($institution))
-                        <select class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
-                            name="institution_id"
-                            id="institution_id"
-                            required>
-                            <option selected>Seleccione una institución</option>
-                            @forelse ($institution as $ins )
-                                <option value="{{ $ins->id }}">{{ $ins->institution }}</option>
-                            @empty
-                                <option>No hay instituciones registradas</option>
-                            @endforelse
-                        </select>
-                    @endif
+                            <select class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
+                                name="institution_id"
+                                id="institution_id"
+                                required>
+                                <option selected>Seleccione una institución</option>
+                                @forelse ($institution as $ins )
+                                    <option value="{{ $ins->id }}">{{ $ins->institution }}</option>
+                                @empty
+                                    <option>No hay instituciones registradas</option>
+                                @endforelse
+                            </select>
+                        @endif
+                        @error('institution_id')<div class="text-danger text-end fw-bold">La institución es requerida</div>@enderror
                     </td>
                 </tr>
                 <tr>
@@ -43,8 +44,8 @@
                             type="text"
                             id="contact"
                             name="contact"
-                            placeholder="Nombre del contacto"
-                            required>
+                            placeholder="Nombre del contacto">
+                        @error('contact')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                     </td>
                 </tr>
                 <tr>
@@ -203,7 +204,7 @@
             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                 <strong>Guardar</strong>
             </button>
-            <a href="{{route('contact.index')}}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
+            <a href="{{ route('contact.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                 <strong>Cancelar</strong>
             </a>
         </div>

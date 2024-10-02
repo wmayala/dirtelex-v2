@@ -4,24 +4,18 @@
         <div class="d-flex justify-content-center">
             <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
                 <strong>{{session('success')}}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
     @elseif(session('danger'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                 <strong>{{session('danger')}}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
     @endif
-
     <div class="py-12">
-        {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> --}}
         <div class="mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="row p-3 text-gray-900 fs-3">
@@ -37,10 +31,7 @@
                         </a>
                     </div>
                 </div>
-
                 @include('layouts.search')
-
-                {{-- <div class="container p-3"> --}}
                 <div class="p-3">
                     <div class="row">
                         <div class="col-12">
