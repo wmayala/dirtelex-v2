@@ -3,13 +3,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-
                 <div class="row p-3 text-gray-900">
                     <div class="fs-3">
                         {{ __("ACTUALIZAR INSTITUCIÓN") }}
                     </div>
                 </div>
-
                 <div class="row p-5">
                     <form action="{{ route('institution.update', $institution->id) }}" method="POST">
                         @csrf @method('PUT')
@@ -125,7 +123,6 @@
                                 </tr>
                             </table>
                         </div>
-
                         <div class="text-center">
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Actualizar</strong>

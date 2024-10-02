@@ -67,13 +67,11 @@
                                 id="code"
                                 name="code"
                                 placeholder="Código de país y área">
-
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="phone"
                                 name="phone"
                                 placeholder="Número telefónico">
-
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="extension"
@@ -86,7 +84,6 @@
                                 id="mobile"
                                 name="mobile"
                                 placeholder="Número telefónico móvil">
-
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="fax"
@@ -95,7 +92,6 @@
                         </div>
                     </td>
                 </tr>
-
                 <tr>
                     <td><label for="email" class="uppercase">Correo electrónico:</label></td>
                     <td>
@@ -106,7 +102,6 @@
                             placeholder="Correo electrónico">
                     </td>
                 </tr>
-
                 <tr>
                     <td><label for="specialFeature" class="uppercase">Característica especial:</label></td>
                     <td>
@@ -209,6 +204,7 @@
             </a>
         </div>
     </form>
+</div>
 
 
 

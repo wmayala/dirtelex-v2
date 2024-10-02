@@ -3,13 +3,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-
                 <div class="row p-3 text-gray-900">
                     <div class="fs-3">
                         {{ __("ACTUALIZAR DIVISIÓN") }}
                     </div>
                 </div>
-
                 <div class="row p-5">
                     <form action="{{route('division.update',$division->id)}}" method="POST">
                         @csrf @method('PUT')
@@ -22,7 +20,7 @@
                                             type="text"
                                             id="division"
                                             name="division"
-                                            value="{{$division->division}}">
+                                            value="{{ $division->division }}">
                                             @error('division')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>
@@ -33,11 +31,7 @@
                                             type="text"
                                             id="description"
                                             name="description"
-                                            @if($division->description)
-                                                value="{{$division->description}}"
-                                            @else
-                                                value="No definida"
-                                            @endif>
+                                            value="{{ $division->description?$division->dscription:'No definida' }}">
                                     </td>
                                 </tr>
 
@@ -51,17 +45,16 @@
                                                     id="act"
                                                     name="status"
                                                     value="1"
-                                                    {{$division->status===1?'checked':''}}>
+                                                    {{ $division->status===1?'checked':'' }}>
                                                 <label for="act">ACTIVO</label>
                                             </div>
-
                                             <div class="col-6 d-flex align-items-center gap-2">
                                                 <input class="col-6 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
                                                     type="radio"
                                                     id="inact"
                                                     name="status"
                                                     value="0"
-                                                    {{$division->status===0?'checked':''}}>
+                                                    {{ $division->status===0?'checked':'' }}>
                                                 <label for="inact">INACTIVO</label>
                                             </div>
                                         </div>
@@ -69,12 +62,11 @@
                                 </tr>
                             </table>
                         </div>
-
                         <div class="text-center">
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Actualizar</strong>
                             </button>
-                            <a href="{{route('division.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                            <a href="{{ route('division.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>

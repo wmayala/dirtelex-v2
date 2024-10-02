@@ -76,13 +76,11 @@
                                                 id="code"
                                                 name="code"
                                                 value="{{ $contact->code }}">
-
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="phone"
                                                 name="phone"
                                                 value="{{ $contact->phone }}">
-
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="extension"
@@ -95,7 +93,6 @@
                                                 id="mobile"
                                                 name="mobile"
                                                 value="{{ $contact->mobile }}">
-
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="fax"
@@ -104,7 +101,6 @@
                                         </div>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td><label for="email" class="uppercase">Correo electrónico:</label></td>
                                     <td>
@@ -115,7 +111,6 @@
                                             value="{{ $contact->email }}">
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td><label for="specialFeature" class="uppercase">Característica especial:</label></td>
                                     <td>
@@ -128,7 +123,6 @@
                                 <tr>
                                     <td><label for="clarification" class="uppercase">Aclaración relevante:</label></td>
                                     <td>
-
                                         <textarea class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                             id="clarification"
                                             name="clarification"

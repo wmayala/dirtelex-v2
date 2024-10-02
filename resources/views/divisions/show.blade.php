@@ -33,7 +33,6 @@
                                         disabled>
                                 </td>
                             </tr>
-
                             <tr>
                                 <td><label for="status" class="uppercase">Estado:</label></td>
                                 <td>

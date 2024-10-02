@@ -1,8 +1,10 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 mt-2" style="height: 75px;">
+
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-center h-16">
             <div class="flex">
+
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('directory.contacts') }}">
@@ -17,12 +19,6 @@
                         <span>{{ __('Directorio') }}</span>
                     </x-nav-link>
                 </div>
-                {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('directory.contacts')" :active="request()->routeIs('directory.contacts')" class="d-flex gap-1">
-                        <i class="fa fa-address-book" aria-hidden="true"></i>
-                        <span>{{ __('Contactos') }}</span>
-                    </x-nav-link>
-                </div> --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('directory.institutions')" :active="request()->routeIs('directory.institutions')" class="d-flex gap-1">
                         <i class="fa fa-building" aria-hidden="true"></i>

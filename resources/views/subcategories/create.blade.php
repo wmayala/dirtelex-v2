@@ -9,7 +9,6 @@
                         {{ __("AGREGAR SUBCATEGORÍA") }}
                     </div>
                 </div>
-
                 <div class="row p-5">
                     <form action="{{route('subcategory.store')}}" method="post">
                         @csrf
@@ -84,20 +83,9 @@
                                 <strong>Cancelar</strong>
                             </a>
                         </div>
-
-
-
                     </form>
-
                 </div>
-
-
-
-
-
-
-
-             </div>
-         </div>
-     </div>
- </x-app-layout>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Dirtelex</title>
 
         <!-- Fonts -->
@@ -40,14 +39,9 @@
                                     <a href="{{ url('/dashboard') }}" class="btn btn-sm rounded text-light" style="background-color: #111e60; color: #f2f2f2;">Administración</a>
                                 </div>
                             @else
-                                {{-- <div class="d-flex justify-content-center py-3">
-                                    <img src="/img/bcr_b.png" alt="Logo BCR" width=125 heigth=125>
-                                </div> --}}
-
                                 <div class="p-3 text-end">
                                     <a href="{{ route('login') }}" class="btn btn-sm rounded text-light" style="background-color: #111e60; color: #f2f2f2;">Iniciar sesión</a>
                                 </div>
-
                             @endauth
                         </div>
                     @endif
@@ -64,8 +58,5 @@
                 </div>
             </div>
         </div>
-
-
-
     </body>
 </html>

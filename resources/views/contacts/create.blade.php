@@ -9,11 +9,10 @@
                         {{ __("AGREGAR CONTACTO") }}
                     </div>
                 </div>
-
                 <div class="row p-5">
                     <livewire:contact/>
                 </div>
-             </div>
-         </div>
-     </div>
- </x-app-layout>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

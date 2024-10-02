@@ -3,13 +3,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-
                 <div class="row p-3 text-gray-900">
                     <div class="fs-3">
                         {{ __("AGREGAR INSTITUCIÓN") }}
                     </div>
                 </div>
-
                 <div class="row p-5">
                     <form action="{{route('institution.store')}}" method="POST">
                         @csrf
