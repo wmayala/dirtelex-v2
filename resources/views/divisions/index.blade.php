@@ -3,14 +3,14 @@
     @if(session('success'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('success')}}</strong>
+                <strong>{{ session('success') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
     @elseif(session('danger'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('danger')}}</strong>
+                <strong>{{ session('danger') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
@@ -47,22 +47,22 @@
                                 <tbody>
                                     @foreach($divisions as $division)
                                     <tr>
-                                        <td class="col-5">{{$division->division}}</td>
-                                        <td class="col-5">{{$division->description?$division->description:'No definida'}}</td>
+                                        <td class="col-5">{{ $division->division }}</td>
+                                        <td class="col-5">{{ $division->description?$division->description:'No definida' }}</td>
                                         <td class="col text-center">
                                             <div class="row">
                                                 <div class="col-4">
-                                                    <a href="{{route('division.show', $division->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                    <a href="{{ route('division.show', $division->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <a href="{{route('division.edit', $division->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                    <a href="{{ route('division.edit', $division->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
 
                                                     <form action="{{ route('division.destroy', $division->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" onclick="deleteObject()">
+                                                        <button type="submit">
                                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                                         </button>
                                                     </form>

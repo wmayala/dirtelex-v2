@@ -3,14 +3,14 @@
     @if(session('success'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('success')}}</strong>
+                <strong>{{ session('success') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
     @elseif(session('danger'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('danger')}}</strong>
+                <strong>{{ session('danger') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
@@ -52,15 +52,15 @@
                                 @foreach($contacts as $contact)
                                     <tr>
                                         <td>
-                                            <span class="fw-bold fs-5 fst-italic">{{$contact->contact}}</span><br>
-                                            <span>{{$contact->position?$contact->position:''}}</span>
+                                            <span class="fw-bold fs-5 fst-italic">{{ $contact->contact }}</span><br>
+                                            <span>{{ $contact->position?$contact->position:'' }}</span>
                                         </td>
                                         <td>
-                                            <span>{{$contact->code?'('.$contact->code.') ':''}}</span><br>
-                                            <span>{{$contact->phone?'Tel.: '.$contact->phone:''}}</span><br>
-                                            <span>{{$contact->mobile?'Cel.: '.$contact->mobile:''}}</span><br>
-                                            <span>{{$contact->extension?'Ext.: '.$contact->extension:''}}</span><br>
-                                            <span>{{$contact->fax?'Fax: '.$contact->fax:''}}</span>
+                                            <span>{{ $contact->code?'('.$contact->code.') ':'' }}</span><br>
+                                            <span>{{ $contact->phone?'Tel.: '.$contact->phone:'' }}</span><br>
+                                            <span>{{ $contact->mobile?'Cel.: '.$contact->mobile:'' }}</span><br>
+                                            <span>{{ $contact->extension?'Ext.: '.$contact->extension:'' }}</span><br>
+                                            <span>{{ $contact->fax?'Fax: '.$contact->fax:'' }}</span>
                                         </td>
                                         <td>{{ $contact->email }}</td>
                                         <td>{{ $contact->institution->institution }}</td>
@@ -69,10 +69,10 @@
                                         <td class="text-center">
                                             <div class="row">
                                                 <div class="col-4">
-                                                    <a href="{{route('contact.show', $contact->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                    <a href="{{ route('contact.show', $contact->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <a href="{{route('contact.edit', $contact->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                    <a href="{{ route('contact.edit', $contact->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
                                                     <form action="{{ route('contact.destroy', $contact->id) }}" method="post">
@@ -102,5 +102,5 @@
             </div>
         </div>
     </div>
- </x-app-layout>
+</x-app-layout>
 

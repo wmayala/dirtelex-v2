@@ -3,14 +3,14 @@
     @if(session('success'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('success')}}</strong>
+                <strong>{{ session('success') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
     @elseif(session('danger'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                <strong>{{session('danger')}}</strong>
+                <strong>{{ session('danger') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
@@ -47,27 +47,21 @@
                                 <tbody>
                                     @foreach($categories as $category)
                                     <tr>
-                                        <td class="col-5">{{$category->category}}</td>
-                                        <td class="col-5">
-                                            @if(!$category->description)
-                                                No definida
-                                            @else
-                                                {{$category->description}}
-                                            @endif
-                                        </td>
+                                        <td class="col-5">{{ $category->category }}</td>
+                                        <td class="col-5">{{ $category->description?$category->description:'No definida' }}</td>
                                         <td class="text-center">
                                             <div class="row">
                                                 <div class="col-4">
-                                                    <a href="{{route('category.show', $category->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                    <a href="{{ route('category.show', $category->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <a href="{{route('category.edit', $category->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                    <a href="{{ route('category.edit', $category->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
                                                     <form action="{{ route('category.destroy', $category->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" onclick="deleteObject()">
+                                                        <button type="submit">
                                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                                         </button>
                                                     </form>
