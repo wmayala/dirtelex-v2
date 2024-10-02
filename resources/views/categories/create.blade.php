@@ -21,7 +21,7 @@
                                             type="text"
                                             id="category"
                                             name="category"
-                                            placeholder="Escriba el nombre de la categoría">
+                                            placeholder="Nombre de la categoría">
                                             @error('category')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                         </td>
 

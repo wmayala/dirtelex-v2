@@ -21,7 +21,7 @@
                                             type="text"
                                             id="division"
                                             name="division"
-                                            placeholder="Escriba el nombre de la división"
+                                            placeholder="Nombre de la división"
                                             >
                                             @error('division')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>

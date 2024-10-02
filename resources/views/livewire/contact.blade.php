@@ -66,29 +66,29 @@
                                 type="text"
                                 id="code"
                                 name="code"
-                                placeholder="Código de país y área">
+                                placeholder="País/Área: 9999">
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="phone"
                                 name="phone"
-                                placeholder="Número telefónico">
+                                placeholder="Número: 99999999">
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="extension"
                                 name="extension"
-                                placeholder="Extensión telefónica">
+                                placeholder="Extensión: 9999">
                         </div>
                         <div class="d-flex justify-content-center align-items-center gap-2">
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="mobile"
                                 name="mobile"
-                                placeholder="Número telefónico móvil">
+                                placeholder="Móvil: 99999999">
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="fax"
                                 name="fax"
-                                placeholder="Número de fax">
+                                placeholder="Fax: 99999999">
                         </div>
                     </td>
                 </tr>
@@ -99,7 +99,7 @@
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Correo electrónico">
+                            placeholder="usuario@mail.com">
                     </td>
                 </tr>
                 <tr>
