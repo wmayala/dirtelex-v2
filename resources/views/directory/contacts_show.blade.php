@@ -171,7 +171,7 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <a href="{{route('directory.contacts')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                        <a href="{{ route('directory.contacts') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
                             <strong>Regresar</strong>
                         </a>
                     </div>

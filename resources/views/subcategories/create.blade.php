@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="row p-5">
-                    <form action="{{route('subcategory.store')}}" method="post">
+                    <form action="{{ route('subcategory.store') }}" method="post">
                         @csrf
                         <div class="flex justify-center align-center">
                             <table class="col-6">
@@ -41,7 +41,7 @@
                                         <select name="category_id" id="category_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                             <option selected>Seleccione una categoría</option>
                                             @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->category}}</option>
+                                            <option value="{{ $category->id }}">{{ $category->category }}</option>
                                             @endforeach
                                         </select>
                                         @error('category_id')<div class="text-danger text-end fw-bold">La categoría es requerida</div>@enderror
@@ -79,7 +79,7 @@
                                 <strong>Guardar</strong>
                             </button>
 
-                            <a href="{{route('subcategory.index')}}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
+                            <a href="{{ route('subcategory.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>

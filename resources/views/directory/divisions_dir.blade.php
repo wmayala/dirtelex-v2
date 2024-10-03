@@ -25,8 +25,8 @@
                                     @foreach($divisions as $division)
                                         @if($division->status==1)
                                             <tr>
-                                                <td class="col-5">{{$division->division}}</td>
-                                                <td class="col-5">{{$division->description?$division->description:'No definida'}}</td>
+                                                <td class="col-5">{{ $division->division }}</td>
+                                                <td class="col-5">{{ $division->description?$division->description:'No definida' }}</td>
                                                 <td class="col text-center"><span class="badge bg-success w-100">ACTIVO</span></td>
                                             </tr>
                                         @endif

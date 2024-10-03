@@ -18,7 +18,7 @@
                                         type="text"
                                         id="division"
                                         name="division"
-                                        value="{{$division->division}}"
+                                        value="{{ $division->division }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -29,7 +29,7 @@
                                         type="text"
                                         id="description"
                                         name="description"
-                                        value="{{$division->description?$division->description:'No definida'}}"
+                                        value="{{ $division->description?$division->description:'No definida' }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -42,7 +42,7 @@
                                                 type="text"
                                                 id="status"
                                                 name="status"
-                                                value="{{$division->status===1?'ACTIVO':'INACTIVO'}}"
+                                                value="{{ $division->status===1?'ACTIVO':'INACTIVO' }}"
                                                 disabled>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <a href="{{route('division.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                        <a href="{{ route('division.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
                             <strong>Regresar</strong>
                         </a>
                     </div>

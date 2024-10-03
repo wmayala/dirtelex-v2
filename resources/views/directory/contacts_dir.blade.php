@@ -1,6 +1,5 @@
 <x-guest-layout>
     @section('title','Contactos')
-
     <div class="py-12">
         <div class="mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -34,19 +33,19 @@
                                                 <div class="fw-bold fs-5 fst-italic">
                                                     <a href="{{ route('directory.contacts_show', $contact->id) }}">{{ $contact->contact }}</a>
                                                 </div>
-                                                <div>{{$contact->position?$contact->position:''}}</div>
+                                                <div>{{ $contact->position?$contact->position:'' }}</div>
                                             </td>
                                             <td>
-                                                <span>{{$contact->code?'('.$contact->code.') ':''}}</span><br>
-                                                <span>{{$contact->phone?'Tel.: '.$contact->phone:''}}</span><br>
-                                                <span>{{$contact->mobile?'Cel.: '.$contact->mobile:''}}</span><br>
-                                                <span>{{$contact->extension?'Ext.: '.$contact->extension:''}}</span><br>
-                                                <span>{{$contact->fax?'Fax: '.$contact->fax:''}}</span>
+                                                <span>{{ $contact->code?'('.$contact->code.') ':'' }}</span><br>
+                                                <span>{{ $contact->phone?'Tel.: '.$contact->phone:'' }}</span><br>
+                                                <span>{{ $contact->mobile?'Cel.: '.$contact->mobile:'' }}</span><br>
+                                                <span>{{ $contact->extension?'Ext.: '.$contact->extension:'' }}</span><br>
+                                                <span>{{ $contact->fax?'Fax: '.$contact->fax:'' }}</span>
                                             </td>
-                                            <td>{{$contact->email}}</td>
-                                            <td>{{$contact->institution->institution}}</td>
-                                            <td>{{$contact->institution->category->category}}</td>
-                                            <td>{{($contact->subcatgory_id?$contact->institution->subcategory->subcategory:$contact->division_id)?$contact->institution->division->division:'No definida'}}</td>
+                                            <td>{{ $contact->email }}</td>
+                                            <td>{{ $contact->institution->institution }}</td>
+                                            <td>{{ $contact->institution->category->category }}</td>
+                                            <td>{{ ($contact->subcatgory_id?$contact->institution->subcategory->subcategory:$contact->division_id)?$contact->institution->division->division:'No definida' }}</td>
                                             <td class="text-center"><span class="badge bg-success w-100">ACTIVO</span></td>
                                         </tr>
                                     @endif

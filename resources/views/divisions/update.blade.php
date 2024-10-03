@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="row p-5">
-                    <form action="{{route('division.update',$division->id)}}" method="POST">
+                    <form action="{{ route('division.update',$division->id) }}" method="POST">
                         @csrf @method('PUT')
                         <div class="flex justify-center align-center">
                             <table class="col-6">

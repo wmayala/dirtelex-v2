@@ -18,7 +18,7 @@
                                         type="text"
                                         id="name"
                                         name="name"
-                                        value="{{$user->name}}"
+                                        value="{{ $user->name }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -29,7 +29,7 @@
                                         type="text"
                                         id="email"
                                         name="email"
-                                        value="{{$user->email}}"
+                                        value="{{ $user->email }}"
                                         disabled>
                                 </td>
                             </tr>
@@ -41,7 +41,7 @@
                                             type="text"
                                             id="status"
                                             name="status"
-                                            value="{{$user->status==1?'ACTIVO':'INACTIVO'}}"
+                                            value="{{ $user->status==1?'ACTIVO':'INACTIVO' }}"
                                             disabled>
                                     </td>
                                 </tr>

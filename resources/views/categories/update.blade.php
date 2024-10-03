@@ -46,7 +46,7 @@
                                                     id="act"
                                                     name="status"
                                                     value="1"
-                                                    {{$category->status===1?'checked':''}}>
+                                                    {{ $category->status===1?'checked':'' }}>
                                                 <label for="act">ACTIVO</label>
                                             </div>
 
@@ -56,7 +56,7 @@
                                                     id="inact"
                                                     name="status"
                                                     value="0"
-                                                    {{$category->status===0?'checked':''}}>
+                                                    {{ $category->status===0?'checked':'' }}>
                                                 <label for="inact">INACTIVO</label>
                                             </div>
                                         </div>
@@ -64,12 +64,11 @@
                                 </tr>
                             </table>
                         </div>
-
                         <div class="text-center">
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Actualizar</strong>
                             </button>
-                            <a href="{{route('category.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                            <a href="{{ route('category.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>

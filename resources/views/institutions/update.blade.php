@@ -82,14 +82,14 @@
                                         @if(!is_null($institution->division_id))
                                             <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                                 @foreach($divisions as $division)
-                                                    <option value="{{ $division->id }}" {{ $institution->division_id==$division->id?'selected':'' }} >{{$division->division}}</option>
+                                                    <option value="{{ $division->id }}" {{ $institution->division_id==$division->id?'selected':'' }}>{{ $division->division }}</option>
                                                 @endforeach
                                             </select>
                                         @else
                                             <select name="division_id" id="division_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                                 <option value="" selected>No definida</option>
                                                 @foreach($divisions as $division)
-                                                    <option value="{{ $division->id }}" {{ $institution->division_id==$division->id?'selected':'' }} >{{$division->division}}</option>
+                                                    <option value="{{ $division->id }}" {{ $institution->division_id==$division->id?'selected':'' }}>{{ $division->division }}</option>
                                                 @endforeach
                                             </select>
                                         @endif
@@ -105,7 +105,7 @@
                                                     id="act"
                                                     name="status"
                                                     value="1"
-                                                    {{$institution->status===1?'checked':''}}>
+                                                    {{ $institution->status===1?'checked':'' }}>
                                                 <label for="act">ACTIVO</label>
                                             </div>
 
@@ -115,7 +115,7 @@
                                                     id="inact"
                                                     name="status"
                                                     value="0"
-                                                    {{$institution->status===0?'checked':''}}>
+                                                    {{ $institution->status===0?'checked':'' }}>
                                                 <label for="inact">INACTIVO</label>
                                             </div>
                                         </div>
@@ -127,7 +127,7 @@
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Actualizar</strong>
                             </button>
-                            <a href="{{route('institution.index')}}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
+                            <a href="{{ route('institution.index') }}" class="btn btn-secondary mt-3 text-sm uppercase col-3">
                                 <strong>Cancelar</strong>
                             </a>
                         </div>
