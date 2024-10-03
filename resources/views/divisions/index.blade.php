@@ -8,12 +8,22 @@
             </div>
         </div>
     @elseif(session('danger'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: '{{ session('danger') }}',
+            timer: 3000,
+            showConfirmButton: false
+        });
+    </script>
+    {{-- @elseif(session('danger'))
         <div class="d-flex justify-content-center">
             <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                 <strong>{{ session('danger') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        </div>
+        </div> --}}
     @endif
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -58,14 +68,14 @@
                                                     <a href="{{ route('division.edit', $division->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-
-                                                    <form action="{{ route('division.destroy', $division->id) }}" method="post">
+                                                    <form id="delete-form" action="{{ route('division.destroy', $division->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit">
+                                                        <button>
                                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                                         </button>
                                                     </form>
+
                                                 </div>
                                             </div>
                                         </td>
@@ -86,4 +96,28 @@
             </div>
         </div>
     </div>
+    @if(session('danger'))
+        <script>
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡Esta acción no se puede deshacer!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!',
+                cancelButtonText: 'Cancelar'
+            }).then((result)=>{
+                if(result.isConfirmed) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                }
+            });
+        </script>
+    @endif
 </x-app-layout>
+
+

@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 @include('layouts.search')
-                <div class="text-center fw-bold"> >>Escriba el nombre del contacto o de la institución<< </div>
+                <div class="text-center fw-bold">Escriba el nombre del contacto o de la institución</div>
                 <div class="p-3">
                     <div class="row">
                         <div class="col-12">
