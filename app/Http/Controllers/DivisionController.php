@@ -69,7 +69,7 @@ class DivisionController extends Controller
         $division=Divisions::find($id);
         $request->validate([
             'division'=>'required|string|max:255',
-            'description'=>'required|string|max:255',
+            'description'=>'string|nullable|max:255',
             'status'=>'boolean|required',
         ]);
         $division->update($request->all());

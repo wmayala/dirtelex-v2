@@ -1,20 +1,6 @@
 <x-app-layout>
     @section('title','Categorías')
-    @if(session('success'))
-        <div class="d-flex justify-content-center">
-            <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                <strong>{{ session('success') }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    @elseif(session('danger'))
-        <div class="d-flex justify-content-center">
-            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                <strong>{{ session('danger') }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    @endif
+    @include('layouts.notifications')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -58,12 +44,8 @@
                                                     <a href="{{ route('category.edit', $category->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <form action="{{ route('category.destroy', $category->id) }}" method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit">
-                                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                                        </button>
+                                                    <form id="delete-form" action="{{ route('category.destroy', $category->id) }}" method="post">
+                                                        @include('layouts.delete')
                                                     </form>
                                                 </div>
                                             </div>
