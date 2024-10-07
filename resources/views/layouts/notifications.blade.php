@@ -14,4 +14,12 @@
             icon: "success"
         });
     </script>
+@elseif(session('warning'))
+    <script>
+        Swal.fire({
+            title: "¡Atención!",
+            text: "{{ session('warning') }}",
+            icon: "warning"
+        });
+    </script>
 @endif

@@ -55,7 +55,7 @@
                             type="text"
                             id="position"
                             name="position"
-                            placeholder="Cargo o área del contacto">
+                            placeholder="Cargo/Área">
                     </td>
                 </tr>
                 <tr>
@@ -66,7 +66,7 @@
                                 type="text"
                                 id="code"
                                 name="code"
-                                placeholder="País/Área: 9999">
+                                placeholder="Código área: 9999">
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="phone"
@@ -118,7 +118,7 @@
                         <textarea class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                             id="clarification"
                             name="clarification"
-                            placeholder="Alguna característica especial"></textarea>
+                            placeholder="Alguna aclaración relevante"></textarea>
                     </td>
                 </tr>
                 <tr>

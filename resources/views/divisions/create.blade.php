@@ -33,7 +33,7 @@
                                             type="text"
                                             id="description"
                                             name="description"
-                                            placeholder="Escriba una descripción">
+                                            placeholder="Descripción de la división">
                                     </td>
                                 </tr>
                                 <tr>

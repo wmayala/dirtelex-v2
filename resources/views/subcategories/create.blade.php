@@ -3,7 +3,6 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-
                 <div class="row p-3 text-gray-900">
                     <div class="fs-3">
                         {{ __("AGREGAR SUBCATEGORÍA") }}
@@ -32,7 +31,7 @@
                                             type="text"
                                             id="description"
                                             name="description"
-                                            placeholder="Escriba una descripción">
+                                            placeholder="Descripción de la subcategoría">
                                     </td>
                                 </tr>
                                 <tr>
@@ -41,7 +40,6 @@
                                         <select name="category_id" id="category_id" class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100">
                                             <option value="" selected>Seleccione una categoría</option>
                                             @foreach($categories as $category)
-
                                             <option value="{{ $category->id }}">{{ $category->category }}</option>
                                             @endforeach
                                         </select>
@@ -61,7 +59,6 @@
                                                     checked>
                                                 <label for="act">ACTIVO</label>
                                             </div>
-
                                             <div class="col-6 d-flex align-items-center gap-2">
                                                 <input class="col-6 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
                                                     type="radio"
@@ -79,7 +76,6 @@
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Guardar</strong>
                             </button>
-
                             <a href="{{ route('subcategory.index') }}" class="btn btn-secondary mt-3 text-sm uppercase w-25">
                                 <strong>Cancelar</strong>
                             </a>

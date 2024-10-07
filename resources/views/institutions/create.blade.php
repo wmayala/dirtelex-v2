@@ -31,7 +31,7 @@
                                             type="text"
                                             id="acronym"
                                             name="acronym"
-                                            placeholder="Escriba una abreviatura o siglas">
+                                            placeholder="Acrónimo o siglas">
                                     </td>
                                 </tr>
                                 <tr>
@@ -41,7 +41,7 @@
                                             type="text"
                                             id="description"
                                             name="description"
-                                            placeholder="Escriba una descripción">
+                                            placeholder="Descripción de la institución">
                                     </td>
                                 </tr>
                                 <tr>

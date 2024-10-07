@@ -19,7 +19,7 @@ class CheckActiveUser
         if(Auth::check() && Auth::user()->status==0)
         {
             Auth::logout();
-            return redirect()->route('login')->with('danger','El usuario se encuentra inactivo, comuníquese con el administrador');
+            return redirect()->route('login')->with('warning','El usuario se encuentra inactivo, comuníquese con el administrador');
         }
         return $next($request);
     }
