@@ -9,10 +9,10 @@
                         {{ __("USUARIOS") }}
                     </div>
                     <div class="col-6 d-flex justify-content-end">
-                        <a class="btn rounded uppercase fw-bold w-50 d-flex justify-content-between align-items-center"
+                        <a class="btn rounded uppercase fw-bold w-75 d-flex justify-content-between align-items-center"
                             style="background-color: #111e60; color: #f2f2f2;" href="{{ route('user.create') }}">
                             <i class="fa fa-bars"></i>
-                            Agregar
+                            Agregar manualmente
                             <i class="fa fa-bars"></i>
                         </a>
                     </div>
@@ -37,8 +37,8 @@
                                         <tr>
                                             <td class="col-3">{{ $user->name }}</td>
                                             <td class="col-3">{{ $user->email }}</td>
-                                            <td class="col-2 text-center">{{ $user->created_at->format('d-m-Y') }} || {{ $user->created_at->format('H:i:s') }}</td>
-                                            <td class="col-2 text-center">{{ $user->updated_at->format('d-m-Y') }} || {{ $user->updated_at->format('H:i:s') }}</td>
+                                            <td class="col-2 text-center">{{ $user->created_at->format('d/m/Y') }} {{ $user->created_at->format('H:i') }}</td>
+                                            <td class="col-2 text-center">{{ $user->updated_at->format('d/m/Y') }} {{ $user->updated_at->format('H:i') }}</td>
                                             <td class="text-center">
                                                 <div class="d-flex gap-3 justify-content-center">
                                                     <div class="">

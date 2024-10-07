@@ -43,14 +43,14 @@
                                                 id="new_password"
                                                 name="new_password"
                                                 placeholder="Escriba una nueva contraseña">
-                                            <div class="mb-2 fs-6 fw-bold">Dejar en blanco para mantener su contraseña</div>
+                                            <div class="mb-3 fs-6 fw-bold">Dejar en blanco para mantener su contraseña</div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td><label for="status" class="uppercase">Estado:</label></td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="col-6 d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center gap- mb-2">
+                                                <div class="col-6 d-flex align-items-center justify-content-start gap-2">
                                                     <input class="bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
                                                         type="radio"
                                                         id="act"
@@ -59,7 +59,7 @@
                                                         {{ $user->status===1?'checked':'' }}>
                                                     <label for="act">ACTIVO</label>
                                                 </div>
-                                                <div class="col-6 d-flex align-items-center gap-2">
+                                                <div class="col-6 d-flex align-items-center justify-content-start gap-2">
                                                     <input class="col-6 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
                                                         type="radio"
                                                         id="inact"
@@ -71,9 +71,23 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="d-flex align-items-center justify-content-center gap-2 w-full">
+                                                    <input class="bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+                                                        type="checkbox"
+                                                        id="is_admin"
+                                                        name="is_admin"
+                                                        value="1"
+                                                        {{ $user->is_admin===1?'checked':'' }}>
+                                                    <label for="is_admin">Administrador</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
-                        <br>
                         <div class="d-flex align-items-center justify-content-center gap-3">
                             <button type="submit" class="btn mt-3 text-sm uppercase w-25" style="background-color: #111e60; color: #f2f2f2">
                                 <strong>Guardar</strong>

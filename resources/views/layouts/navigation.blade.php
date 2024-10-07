@@ -67,10 +67,11 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('user.index')" class="d-flex align-items-center gap-2">
-                            <i class="fa fa-users" aria-hidden="true"></i><span>{{ __('Usuarios') }}</span>
-                        </x-dropdown-link>
-
+                        @if(Auth::user()->is_admin==1)
+                            <x-dropdown-link :href="route('user.index')" class="d-flex align-items-center gap-2">
+                                <i class="fa fa-users" aria-hidden="true"></i><span>{{ __('Usuarios') }}</span>
+                            </x-dropdown-link>
+                        @endif
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

@@ -38,12 +38,14 @@ class UserController extends Controller
             'name'=>'required|string|max:255',
             'email'=>'required|email',
             'password'=>'required|min:8',
+            'is_admin'=>'boolean|nullable',
             'status'=>'required|boolean',
         ]);
         $user=new User([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$request->password,
+            'is_admin'=>$request->is_admin,
         ]);
         $user->save();
         return redirect()->route('user.index')->with('success','Usuario creado correctamente');
@@ -64,6 +66,9 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user=User::find($id);
+
+        //dd($user);
+
         return view('users.update', compact('user'));
     }
 
@@ -73,16 +78,22 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         $user=User::find($id);
+
+
+
         $request->validate([
             'name'=>'required|string|max:255',
             'email'=>'required|email',
             'new_password'=>'min:8|nullable',
+            'is_admin'=>'boolean|nullable',
             'status'=>'required|boolean',
         ]);
+
         $user->update([
             $user->name=$request->name,
             $user->email=$request->email,
             $user->password=$request->new_password==null?$user->password:$request->new_password,
+            $user->is_admin=$request->is_admin,
             $user->status=$request->status,
         ]);
         return redirect()->route('user.index')->with('success','Usuario actualizado correctamente');
