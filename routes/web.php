@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckActiveUser;
 use App\Http\Controllers\RandomLinkController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 // RUTAS DE DIRECTORIO
@@ -24,6 +25,8 @@ Route::get('/directory/subcategories',[DirectoryController::class,'subcategories
 Route::get('/directory/subcategories/{id}',[DirectoryController::class,'subcategories_show'])->name('directory.subcategories_show');
 Route::get('/directory/divisions',[DirectoryController::class,'divisions_dir'])->name('directory.divisions');
 Route::get('/directory/divisions/{id}',[DirectoryController::class,'divisions_show'])->name('directory.divisions_show');
+
+// Acceso a ruta generada
 Route::get('/register-new/{token}', [RandomLinkController::class, 'redirect'])->name('random.link');
 
 Route::get('/404', function(){
