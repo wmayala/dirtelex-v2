@@ -9,16 +9,22 @@
                         {{ __("USUARIOS") }}
                     </div>
                     <div class="col-6 d-flex justify-content-end gap-2">
-                        <a class="btn rounded uppercase fw-bold w-auto d-flex justify-content-between align-items-center"
-                            style="background-color: #111e60; color: #f2f2f2;" href="">
-                            <i class="fa fa-magic" aria-hidden="true"></i>
-                        </a>
-                        <a class="btn rounded uppercase fw-bold w-50 d-flex justify-content-between align-items-center"
+                        <form class="mb-0 d-flex gap-2" action="{{ route('generate.random.link') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn rounded fw-bold d-flex justify-content-center align-items-center gap-2"
+                            style="background-color: #111e60; color: #f2f2f2;">
+                                <i class="fa fa-magic"></i>
+                                <div>Generar link de registro</div>
+                            </button>
+                            <a class="btn rounded fw-bold d-flex justify-content-center align-items-center gap-2"
                             style="background-color: #111e60; color: #f2f2f2;" href="{{ route('user.create') }}">
-                            <i class="fa fa-bars"></i>
-                            Agregar
-                            <i class="fa fa-bars"></i>
-                        </a>
+                                <i class="fa fa-bars"></i>
+                                <div>Registrar manualmente</div>
+
+                            </a>
+                        </form>
+
+
                     </div>
                 </div>
                 @include('layouts.search')

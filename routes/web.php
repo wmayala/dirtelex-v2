@@ -8,6 +8,7 @@ use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckActiveUser;
+use App\Http\Controllers\RandomLinkController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +24,11 @@ Route::get('/directory/subcategories',[DirectoryController::class,'subcategories
 Route::get('/directory/subcategories/{id}',[DirectoryController::class,'subcategories_show'])->name('directory.subcategories_show');
 Route::get('/directory/divisions',[DirectoryController::class,'divisions_dir'])->name('directory.divisions');
 Route::get('/directory/divisions/{id}',[DirectoryController::class,'divisions_show'])->name('directory.divisions_show');
+Route::get('/register-new/{token}', [RandomLinkController::class, 'redirect'])->name('random.link');
+
+Route::get('/404', function(){
+    return view('layouts.404');
+})->name('error');
 
 // RUTAS DE ADMINISTRACIÓN
 Route::middleware('auth', CheckActiveUser::class)->group(function () {
@@ -32,6 +38,9 @@ Route::middleware('auth', CheckActiveUser::class)->group(function () {
     Route::resource('subcategory', SubcategoryController::class);
     Route::resource('division', DivisionController::class);
     Route::resource('user', UserController::class);
+
+    // Ruta para generar link de registro
+    Route::post('/generate-link', [RandomLinkController::class, 'generate'])->name('generate.random.link');
 });
 
 require __DIR__.'/auth.php';
