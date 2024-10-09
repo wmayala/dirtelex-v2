@@ -8,11 +8,15 @@
                     <div class="col-6">
                         {{ __("USUARIOS") }}
                     </div>
-                    <div class="col-6 d-flex justify-content-end">
-                        <a class="btn rounded uppercase fw-bold w-75 d-flex justify-content-between align-items-center"
+                    <div class="col-6 d-flex justify-content-end gap-2">
+                        <a class="btn rounded uppercase fw-bold w-auto d-flex justify-content-between align-items-center"
+                            style="background-color: #111e60; color: #f2f2f2;" href="">
+                            <i class="fa fa-magic" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn rounded uppercase fw-bold w-50 d-flex justify-content-between align-items-center"
                             style="background-color: #111e60; color: #f2f2f2;" href="{{ route('user.create') }}">
                             <i class="fa fa-bars"></i>
-                            Agregar manualmente
+                            Agregar
                             <i class="fa fa-bars"></i>
                         </a>
                     </div>

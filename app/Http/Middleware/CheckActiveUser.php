@@ -13,6 +13,9 @@ class CheckActiveUser
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     *
+     * Valida que el usuario que intenta iniciar sesión está activo en el sistema, sino se encuentra activo muestra un mensaje.
+     * Este middleware se agrega en el grupo de rutas en web.php
      */
     public function handle(Request $request, Closure $next): Response
     {

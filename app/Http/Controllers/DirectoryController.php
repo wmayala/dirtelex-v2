@@ -13,6 +13,10 @@ class DirectoryController extends Controller
 {
     public function contacts_dir(Request $request)
     {
+        // Valida si se escribió en el cuadro de búsqueda,
+        // la búsqueda se realiza por nombre del contacto o
+        // por nombre de la institución
+        
         if($request)
         {
             $search=$request->input('search');

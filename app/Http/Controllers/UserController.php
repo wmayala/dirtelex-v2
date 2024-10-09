@@ -66,9 +66,6 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user=User::find($id);
-
-        //dd($user);
-
         return view('users.update', compact('user'));
     }
 
@@ -78,9 +75,6 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         $user=User::find($id);
-
-
-
         $request->validate([
             'name'=>'required|string|max:255',
             'email'=>'required|email',
@@ -88,7 +82,6 @@ class UserController extends Controller
             'is_admin'=>'boolean|nullable',
             'status'=>'required|boolean',
         ]);
-
         $user->update([
             $user->name=$request->name,
             $user->email=$request->email,

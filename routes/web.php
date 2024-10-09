@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InstitutionController;
@@ -10,6 +9,7 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckActiveUser;
 use Illuminate\Support\Facades\Route;
+
 
 // RUTAS DE DIRECTORIO
 Route::get('/', [DirectoryController::class, 'contacts_dir'])->name('home');
