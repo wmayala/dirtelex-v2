@@ -72,7 +72,8 @@
                                 <i class="fa fa-users" aria-hidden="true"></i><span>{{ __('Usuarios') }}</span>
                             </x-dropdown-link>
                         @endif
-                        <!-- Authentication -->
+
+                        <!--  Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
