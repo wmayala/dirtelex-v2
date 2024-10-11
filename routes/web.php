@@ -9,6 +9,7 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckActiveUser;
 use App\Http\Controllers\RandomLinkController;
+use App\Http\Middleware\RestrictRouteAccess;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,10 +41,14 @@ Route::middleware('auth', CheckActiveUser::class)->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('subcategory', SubcategoryController::class);
     Route::resource('division', DivisionController::class);
-    Route::resource('user', UserController::class);
+    //Route::resource('user', UserController::class);
 
     // Ruta para generar link de registro
     Route::post('/generate-link', [RandomLinkController::class, 'generate'])->name('generate.random.link');
+});
+
+Route::middleware('auth', CheckActiveUser::class, RestrictRouteAccess::class)->group(function () {
+    Route::resource('user', UserController::class);
 });
 
 require __DIR__.'/auth.php';
