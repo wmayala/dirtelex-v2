@@ -28,7 +28,7 @@
                                                 <td>{{ $division->division }}</td>
                                                 <td>{{ $division->institution_id?$division->institution->institution:'No posee instituciones asociadas' }}</td>
                                                 <td>{{ $division->description?$division->description:'No definida' }}</td>
-                                                <td class="col text-center"><span class="badge bg-success w-100">ACTIVO</span></td>
+                                                <td class="col text-center"><span class="badge bg-success">ACTIVO</span></td>
                                             </tr>
                                         @endif
                                     @endforeach

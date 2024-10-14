@@ -28,7 +28,7 @@
                                                     <a href="{{ route('directory.categories_show', $category->id) }}">{{ $category->category }}</a>
                                                 </td>
                                                 <td class="col-5">{{ $category->description?$category->description:'No definida' }}</td>
-                                                <td class="text-center"><span class="badge bg-success w-100">ACTIVO</span>
+                                                <td class="text-center"><span class="badge bg-success">ACTIVO</span>
                                                 </td>
                                             </tr>
                                         @endif

@@ -35,7 +35,7 @@
                                                     <td class="col-3">{{ $institution->description?$institution->description:'No definida' }}</td>
                                                     <td class="col-3">{{ $institution->category->category }}</td>
                                                     <td class="col-2">{{ $institution->subcategory_id?$institution->subcategory->subcategory:'No definida' }}</td>
-                                                    <td class="text-center"><span class="badge bg-success w-100">ACTIVO</span></td>
+                                                    <td class="text-center"><span class="badge bg-success">ACTIVO</span></td>
                                                 </tr>
                                             @endif
                                         @endforeach

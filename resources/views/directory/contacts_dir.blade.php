@@ -51,7 +51,7 @@
                                                 <br>
                                                 {{ $contact->institution->division_id?$contact->institution->division->division:'No definida' }}
                                             </td>
-                                            <td class="text-center"><span class="badge bg-success w-100">ACTIVO</span></td>
+                                            <td class="text-center"><span class="badge bg-success">ACTIVO</span></td>
                                         </tr>
                                     @endif
                                 @endforeach
