@@ -20,7 +20,7 @@ class Divisions extends Model
 
     public function institution()
     {
-        return $this->hasMany(Institutions::class, 'institution_id');
+        return $this->hasMany(Institutions::class, 'division_id');
     }
 
     public function contact()

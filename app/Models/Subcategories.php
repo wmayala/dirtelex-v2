@@ -26,6 +26,6 @@ class Subcategories extends Model
 
     public function institution()
     {
-        return $this->belongsTo(Institutions::class, 'institution_id');
+        return $this->hasMany(Institutions::class, 'subcategory_id');
     }
 }

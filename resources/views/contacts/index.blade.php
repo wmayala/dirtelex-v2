@@ -51,7 +51,11 @@
                                         <td>{{ $contact->email }}</td>
                                         <td>{{ $contact->institution->institution }}</td>
                                         <td>{{ $contact->institution->category->category }}</td>
-                                        <td>{{ ($contact->subcatgory_id?$contact->institution->subcategory->subcategory:$contact->division_id)?$contact->institution->division->division:'No definida' }}</td>
+                                        <td>
+                                            {{ $contact->institution->subcategory_id?$contact->institution->subcategory->subcategory:'No definida' }}
+                                            <br>
+                                            {{ $contact->institution->division_id?$contact->institution->division->division:'No definida' }}
+                                        </td>
                                         <td class="text-center">
                                             <div class="row">
                                                 <div class="col-4">

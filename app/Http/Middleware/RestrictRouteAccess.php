@@ -21,7 +21,7 @@ class RestrictRouteAccess
             if(Auth::user()->is_admin==1) {
                 return $next($request);
             } else {
-                return redirect()->route('directory.contacts')->with('warning', 'No tienes acceso a esta página.');
+                return redirect()->route('directory.contacts')->with('warning', 'Esta página es de acceso restringido');
             }
         }
     }
