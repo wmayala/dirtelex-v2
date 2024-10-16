@@ -65,7 +65,12 @@
                                                     <a href="{{ route('contact.edit', $contact->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <form id="delete-form" action="{{ route('contact.destroy', $contact->id) }}" method="post">
+                                                    <button onclick="confirmDelete({{ $contact->id }})">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </button>
+                                                    <form id="delete-form-{{ $contact->id }}" action="{{ route('contact.destroy', $contact->id) }}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
                                                         @include('layouts.delete')
                                                     </form>
                                                 </div>

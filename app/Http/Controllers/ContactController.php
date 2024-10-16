@@ -145,6 +145,6 @@ class ContactController extends Controller
     {
         $contact=Contacts::find($id);
         $contact->delete();
-        return redirect()->route('contact.index')->with('danger','Contacto eliminado correctamente');
+        return redirect()->route('contact.index')->with('delete','Contacto eliminado correctamente');
     }
 }

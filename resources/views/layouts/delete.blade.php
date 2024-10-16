@@ -1,11 +1,5 @@
-@csrf
-@method('DELETE')
-<button type="button" onclick="confirmDelete()">
-    <i class="fa fa-trash" aria-hidden="true"></i>
-</button>
-
 <script>
-    function confirmDelete(){
+    function confirmDelete(contactId){
         Swal.fire({
             title: '¿Eliminar?',
             text: "¡Esta acción no se puede deshacer!",
@@ -19,8 +13,7 @@
             allowEscapeKey: false,
         }).then((result)=>{
             if(result.isConfirmed) {
-                document.getElementById('delete-form').submit();
-
+                document.getElementById('delete-form-'+contactId).submit();
             }
         });
     }

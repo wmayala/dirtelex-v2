@@ -44,7 +44,12 @@
                                                     <a href="{{ route('category.edit', $category->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <form id="delete-form" action="{{ route('category.destroy', $category->id) }}" method="post">
+                                                    <button onclick="confirmDelete({{ $category->id }})">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </button>
+                                                    <form id="delete-form-{{ $category->id }}" action="{{ route('category.destroy', $category->id) }}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
                                                         @include('layouts.delete')
                                                     </form>
                                                 </div>

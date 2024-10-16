@@ -44,7 +44,12 @@
                                                     <a href="{{ route('division.edit', $division->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <form id="delete-form" action="{{ route('division.destroy', $division->id) }}" method="post">
+                                                    <button onclick="confirmDelete({{ $division->id }})">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </button>
+                                                    <form id="delete-form-{{ $division->id }}" action="{{ route('division.destroy', $division->id) }}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
                                                         @include('layouts.delete')
                                                     </form>
 

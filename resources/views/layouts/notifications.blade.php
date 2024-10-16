@@ -22,6 +22,14 @@
             icon: "warning"
         });
     </script>
+@elseif(session('delete'))
+<script>
+    Swal.fire({
+        title: "Eliminado!",
+        text: "{{ session('delete') }}",
+        icon: "success"
+    });
+</script>
 @elseif(session('shareableLink'))
     <script>
         Swal.fire({

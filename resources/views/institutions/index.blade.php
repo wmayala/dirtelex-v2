@@ -53,7 +53,12 @@
                                                         <a href="{{ route('institution.edit', $institution->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                     </div>
                                                     <div class="col-4">
-                                                        <form id="delete-form" action="{{ route('institution.destroy', $institution->id) }}" method="post">
+                                                        <button onclick="confirmDelete({{ $institution->id }})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </button>
+                                                        <form id="delete-form-{{ $institution->id }}" action="{{ route('institution.destroy', $institution->id) }}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
                                                             @include('layouts.delete')
                                                         </form>
                                                     </div>
