@@ -28,7 +28,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($contacts as $contact)
-                                    @if($contact->status==1)
+                                    @if($contact->status)
                                         <tr>
                                             <td>
                                                 <div class="fw-bold fs-5 fst-italic">

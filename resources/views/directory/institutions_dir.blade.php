@@ -16,10 +16,11 @@
                                 <thead>
                                     <tr>
                                         <th>NOMBRE</th>
-                                        <th></th>
+                                        <th>SIGLAS</th>
                                         <th>DESCRIPCIÓN</th>
                                         <th>CATEGORÍA</th>
                                         <th>SUBCATEGORÍA</th>
+                                        <th>DIVISIÓN</th>
                                         <th class="text-center">ESTADO</th>
                                     </tr>
                                 </thead>
@@ -28,13 +29,14 @@
                                         @foreach($institutions as $institution)
                                             @if($institution->status)
                                                 <tr>
-                                                    <td class="col-2">
+                                                    <td>
                                                         <a href="{{ route('directory.institutions_show', $institution->id) }}">{{ $institution->institution }}</a>
                                                     </td>
                                                     <td class="text-center">{{ $institution->acronym }}</td>
-                                                    <td class="col-3">{{ $institution->description?$institution->description:'No definida' }}</td>
-                                                    <td class="col-3">{{ $institution->category->category }}</td>
-                                                    <td class="col-2">{{ $institution->subcategory_id?$institution->subcategory->subcategory:'No definida' }}</td>
+                                                    <td>{{ $institution->description?$institution->description:'No definida' }}</td>
+                                                    <td>{{ $institution->category->category }}</td>
+                                                    <td>{{ $institution->subcategory_id?$institution->subcategory->subcategory:'No definida' }}</td>
+                                                    <td>{{ $institution->division_id?$institution->division->division:'No definida' }}</td>
                                                     <td class="text-center"><span class="badge bg-success">ACTIVO</span></td>
                                                 </tr>
                                             @endif

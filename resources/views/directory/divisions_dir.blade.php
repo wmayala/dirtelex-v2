@@ -16,17 +16,17 @@
                                 <thead>
                                     <tr>
                                         <th>NOMBRE</th>
-                                        <th>INSTITUCIÓN</th>
                                         <th>DESCRIPCIÓN</th>
                                         <th class="text-center">ESTADO</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($divisions as $division)
-                                        @if($division->status==1)
+                                        @if($division->status)
                                             <tr>
-                                                <td>{{ $division->division }}</td>
-                                                <td>{{ $division->institution_id?$division->institution->institution:'No posee instituciones asociadas' }}</td>
+                                                <td>
+                                                    <a href="{{ route('directory.divisions_show', $division->id) }}">{{ $division->division }}</a>
+                                                </td>
                                                 <td>{{ $division->description?$division->description:'No definida' }}</td>
                                                 <td class="col text-center"><span class="badge bg-success">ACTIVO</span></td>
                                             </tr>

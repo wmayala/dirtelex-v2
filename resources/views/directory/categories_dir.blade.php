@@ -22,12 +22,12 @@
                                 </thead>
                                 <tbody>
                                     @foreach($categories as $category)
-                                        @if($category->status==1)
+                                        @if($category->status)
                                             <tr>
-                                                <td class="col-5">
+                                                <td>
                                                     <a href="{{ route('directory.categories_show', $category->id) }}">{{ $category->category }}</a>
                                                 </td>
-                                                <td class="col-5">{{ $category->description?$category->description:'No definida' }}</td>
+                                                <td>{{ $category->description?$category->description:'No definida' }}</td>
                                                 <td class="text-center"><span class="badge bg-success">ACTIVO</span>
                                                 </td>
                                             </tr>

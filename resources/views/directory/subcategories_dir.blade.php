@@ -23,13 +23,13 @@
                                 </thead>
                                 <tbody>
                                     @foreach($subcategories as $subcategory)
-                                        @if($subcategory->status==1)
+                                        @if($subcategory->status)
                                             <tr>
-                                                <td class="col-3">
+                                                <td>
                                                     <a href="{{ route('directory.subcategories_show', $subcategory->id) }}">{{ $subcategory->subcategory }}</a>
                                                 </td>
-                                                <td class="col-4">{{ $subcategory->category->category }}</td>
-                                                <td class="col-3">{{ $subcategory->description?$subcategory->description:'No definida' }}</td>
+                                                <td>{{ $subcategory->category->category }}</td>
+                                                <td>{{ $subcategory->description?$subcategory->description:'No definida' }}</td>
                                                 <td class="text-center"><span class="badge bg-success">ACTIVO</span></td>
                                             </tr>
                                         @endif

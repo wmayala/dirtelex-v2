@@ -16,7 +16,7 @@ class DirectoryController extends Controller
         // Valida si se escribió en el cuadro de búsqueda,
         // la búsqueda se realiza por nombre del contacto o
         // por nombre de la institución
-        
+
         if($request)
         {
             $search=$request->input('search');
@@ -113,5 +113,11 @@ class DirectoryController extends Controller
             $divisions=Divisions::all();
         }
         return view('directory.divisions_dir')->with('divisions', $divisions);
+    }
+
+    public function divisions_show(string $id)
+    {
+        $division=Divisions::find($id);
+        return view('directory.divisions_show')->with('division', $division);
     }
 }
