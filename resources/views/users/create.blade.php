@@ -21,6 +21,7 @@
                                                 id="name"
                                                 name="name"
                                                 placeholder="Nombre de usuario"
+                                                autofocus
                                                 required>
                                         </td>
                                     </tr>

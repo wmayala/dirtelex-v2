@@ -20,7 +20,8 @@
                                             type="text"
                                             id="institution"
                                             name="institution"
-                                            placeholder="Nombre de la institución">
+                                            placeholder="Nombre de la institución"
+                                            autofocus>
                                             @error('institution')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>

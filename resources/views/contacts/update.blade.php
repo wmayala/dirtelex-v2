@@ -75,16 +75,19 @@
                                                 type="text"
                                                 id="code"
                                                 name="code"
+                                                placeholder="País/Área"
                                                 value="{{ $contact->code }}">
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="phone"
                                                 name="phone"
+                                                placeholder="Teléfono"
                                                 value="{{ $contact->phone }}">
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="extension"
                                                 name="extension"
+                                                placeholder="Extensión"
                                                 value="{{ $contact->extension }}">
                                         </div>
                                         <div class="d-flex justify-content-center align-items-center gap-2">
@@ -92,11 +95,13 @@
                                                 type="text"
                                                 id="mobile"
                                                 name="mobile"
+                                                placeholder="Móvil"
                                                 value="{{ $contact->mobile }}">
                                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                                 type="text"
                                                 id="fax"
                                                 name="fax"
+                                                placeholder="Otro/Fax"
                                                 value="{{ $contact->fax }}">
                                         </div>
                                     </td>
@@ -108,6 +113,7 @@
                                             type="email"
                                             id="email"
                                             name="email"
+                                            placeholder="usuario@dominio.com"
                                             value="{{ $contact->email }}">
                                     </td>
                                 </tr>

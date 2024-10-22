@@ -20,7 +20,8 @@
                                             type="text"
                                             id="subcategory"
                                             name="subcategory"
-                                            placeholder="Nombre de la subcategoría">
+                                            placeholder="Nombre de la subcategoría"
+                                            autofocus>
                                             @error('subcategory')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>

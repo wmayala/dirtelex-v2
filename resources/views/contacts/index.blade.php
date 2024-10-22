@@ -37,16 +37,16 @@
                                 <tbody>
                                 @foreach($contacts as $contact)
                                     <tr>
-                                        <td>
+                                        <td class="col-3">
                                             <span class="fw-bold fs-5 fst-italic">{{ $contact->contact }}</span><br>
                                             <span>{{ $contact->position?$contact->position:'' }}</span>
                                         </td>
-                                        <td>
+                                        <td class="col-2">
                                             <span>{{ $contact->code?'('.$contact->code.') ':'' }}</span><br>
                                             <span>{{ $contact->phone?'Tel.: '.$contact->phone:'' }}</span><br>
                                             <span>{{ $contact->mobile?'Cel.: '.$contact->mobile:'' }}</span><br>
                                             <span>{{ $contact->extension?'Ext.: '.$contact->extension:'' }}</span><br>
-                                            <span>{{ $contact->fax?'Fax: '.$contact->fax:'' }}</span>
+                                            <span>{{ $contact->fax?'Otro/Fax: '.$contact->fax:'' }}</span>
                                         </td>
                                         <td>{{ $contact->email }}</td>
                                         <td>{{ $contact->institution->institution }}</td>

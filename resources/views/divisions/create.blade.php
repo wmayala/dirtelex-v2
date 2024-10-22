@@ -22,7 +22,7 @@
                                             id="division"
                                             name="division"
                                             placeholder="Nombre de la división"
-                                            >
+                                            autofocus>
                                             @error('division')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                     </td>
                                 </tr>

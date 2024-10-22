@@ -21,7 +21,8 @@
                                             type="text"
                                             id="category"
                                             name="category"
-                                            placeholder="Nombre de la categoría">
+                                            placeholder="Nombre de la categoría"
+                                            autofocus>
                                             @error('category')<div class="text-danger text-end fw-bold">El nombre es requerido</div>@enderror
                                         </td>
 

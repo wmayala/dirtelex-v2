@@ -9,7 +9,8 @@
                         <select class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                             name="division_id"
                             id="division_id"
-                            wire:model.lazy='selectedDivision'>
+                            wire:model.lazy='selectedDivision'
+                            autofocus>
                             <option selected>Seleccione una división</option>
                             <option value="0">No posee</option>
                             @foreach ($division as $div)
@@ -71,7 +72,7 @@
                                 type="text"
                                 id="phone"
                                 name="phone"
-                                placeholder="Número: 99999999">
+                                placeholder="Número: 9999-9999">
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="extension"
@@ -83,12 +84,12 @@
                                 type="text"
                                 id="mobile"
                                 name="mobile"
-                                placeholder="Móvil: 99999999">
+                                placeholder="Móvil: 9999-9999">
                             <input class="mb-2 bg-gray-50 border border-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-100"
                                 type="text"
                                 id="fax"
                                 name="fax"
-                                placeholder="Fax: 99999999">
+                                placeholder="Otro/Fax: 9999-9999">
                         </div>
                     </td>
                 </tr>

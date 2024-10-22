@@ -30,18 +30,18 @@
                                 @foreach($contacts as $contact)
                                     @if($contact->status)
                                         <tr>
-                                            <td>
+                                            <td class="col-3">
                                                 <div class="fw-bold fs-5 fst-italic">
                                                     <a href="{{ route('directory.contacts_show', $contact->id) }}">{{ $contact->contact }}</a>
                                                 </div>
                                                 <div>{{ $contact->position?$contact->position:'' }}</div>
                                             </td>
-                                            <td>
+                                            <td class="col-2">
                                                 <span>{{ $contact->code?'('.$contact->code.') ':'' }}</span><br>
                                                 <span>{{ $contact->phone?'Tel.: '.$contact->phone:'' }}</span><br>
                                                 <span>{{ $contact->mobile?'Cel.: '.$contact->mobile:'' }}</span><br>
                                                 <span>{{ $contact->extension?'Ext.: '.$contact->extension:'' }}</span><br>
-                                                <span>{{ $contact->fax?'Fax: '.$contact->fax:'' }}</span>
+                                                <span>{{ $contact->fax?'Otro/Fax: '.$contact->fax:'' }}</span>
                                             </td>
                                             <td>{{ $contact->email }}</td>
                                             <td>{{ $contact->institution->institution }}</td>

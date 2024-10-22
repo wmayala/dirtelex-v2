@@ -1,7 +1,7 @@
 @if(session('success'))
     <script>
         Swal.fire({
-            title: "¡Éxito!",
+            title: "¡Listo!",
             text: "{{ session('success') }}",
             icon: "success"
         });
@@ -9,7 +9,7 @@
 @elseif(session('danger'))
     <script>
         Swal.fire({
-            title: "¡Éxito!",
+            title: "¡Listo!",
             text: "{{ session('danger') }}",
             icon: "success"
         });
@@ -25,7 +25,7 @@
 @elseif(session('delete'))
 <script>
     Swal.fire({
-        title: "Eliminado!",
+        title: "¡Eliminado!",
         text: "{{ session('delete') }}",
         icon: "success"
     });
